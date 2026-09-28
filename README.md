@@ -6,11 +6,11 @@ Der KI-Kompass EB ist eine browserbasierte Anwendung für Einrichtungen der Erwa
 
 ## Aufbau
 
-Die Startseite erschließt vier Zugänge über ein interaktives Kompassrad.
+Die Startseite ist das Orientierungsrad. Darunter führen Kacheln zu den weiteren Zugängen.
 
 ### 1. KI einordnen
 
-Das **Orientierungsrad** verbindet zwei Perspektiven, Alignment und kritische Medienkompetenz, mit sechs Handlungsfeldern (Werte und Ziele, Quellen und Wissen, Bias und Repräsentation, Autonomie, Transparenz, Verantwortung). Zu jedem Feld werden beide Perspektiven, ein Denkimpuls, ein Praxisbeispiel und der Quellenbezug angezeigt. Einzelne Felder lassen sich direkt verlinken, etwa `orientierungsrad.html#bias`.
+Das **Orientierungsrad** verbindet zwei Perspektiven, Alignment und kritische Medienkompetenz, mit sechs Handlungsfeldern (Werte und Ziele, Quellen und Wissen, Bias und Repräsentation, Autonomie, Transparenz, Verantwortung). Zu jedem Feld werden beide Perspektiven, ein Denkimpuls, ein Praxisbeispiel und der Quellenbezug angezeigt. Einzelne Felder lassen sich direkt verlinken, etwa `index.html#bias`.
 
 ### 2. Praxis erkunden
 
@@ -36,8 +36,8 @@ In Vorbereitung. Eine Einordnung von Art. 4 der KI-Verordnung für Einrichtungen
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Startseite mit Kompassrad |
-| `orientierungsrad.html` | Orientierungsrad mit Handlungsfeldern, Praxisbeispielen und Quellen |
+| `index.html` | Startseite mit Orientierungsrad, Handlungsfeldern und weiteren Zugängen |
+| `orientierungsrad.html` | Weiterleitung der früheren Adresse auf die Startseite |
 | `praxisbeispiele.html` | Sammlung der Praxisbeispiele mit Filter |
 | `quellen.html` | Literatur und Referenzen im APA-Format, filterbar nach Perspektive und Handlungsfeld |
 | `play.html` | Platzhalter PLAY |
