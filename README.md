@@ -10,11 +10,11 @@ Die Startseite ist das Orientierungsrad. Darunter führen Kacheln zu den weitere
 
 ### 1. KI einordnen
 
-Das **Orientierungsrad** verbindet zwei Perspektiven, Alignment und kritische Medienkompetenz, mit sechs Handlungsfeldern (Werte und Ziele, Quellen und Wissen, Bias und Repräsentation, Autonomie, Transparenz, Verantwortung). Zu jedem Feld werden beide Perspektiven, ein Denkimpuls, ein Praxisbeispiel und der Quellenbezug angezeigt. Einzelne Felder lassen sich direkt verlinken, etwa `index.html#bias`.
+Das **Orientierungsrad** verbindet zwei Perspektiven, Alignment und kritische Medienkompetenz, mit sechs Handlungsfeldern (Werte und Ziele, Quellen und Wissen, Bias und Repräsentation, Autonomie, Transparenz, Verantwortung). Zu jedem Feld werden beide Perspektiven, ein Denkimpuls und der Quellenbezug angezeigt. Die kritische Medienkompetenz ist dabei jeweils einer Dimension nach Baacke zugeordnet. Ein Verweis führt zu den passenden Praxisbeispielen. Einzelne Felder lassen sich direkt verlinken, etwa `index.html#bias`.
 
 ### 2. Praxis erkunden
 
-Die Seite **Praxisbeispiele** stellt zunächst vier Anwendungen aus der Erwachsenenbildung vor, die mit KI-Unterstützung entstanden sind: die Wirkungs-Werkstatt, die Persona-Werkstatt für finanzielle Bildung, das FAQ-Whiteboard KI & Urheberrecht und den Einfach.Machen Wissensraum. Zu jeder Anwendung werden die Rolle der KI und der Bezug zum Orientierungsrad beschrieben. Darunter folgen konstruierte Fallbeispiele aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit, jeweils mit einer Prüffrage für das eigene Team. Rechtliche Hinweise beziehen sich auf die Verordnung (EU) 2024/1689 und die Verordnung (EU) 2016/679 mit Stand September 2026.
+Die Seite **Praxisbeispiele** stellt zunächst sechs Anwendungen aus der Erwachsenenbildung vor, die mit KI-Unterstützung entstanden sind: die Wirkungs-Werkstatt, die Persona-Werkstatt für finanzielle Bildung, das FAQ-Whiteboard KI & Urheberrecht, den Einfach.Machen Wissensraum, das Beteiligungsprojekt S.P.I.E.G.E.L. und den Escape Room „Das Archiv der Menschlichkeit“. Ein Filter zeigt Anwendungen und Fallbeispiele je Handlungsfeld, etwa `praxisbeispiele.html?feld=bias`. Zu jeder Anwendung werden die Rolle der KI und der Bezug zum Orientierungsrad beschrieben. Darunter folgen konstruierte Fallbeispiele aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit, jeweils mit einer Prüffrage für das eigene Team. Rechtliche Hinweise beziehen sich auf die Verordnung (EU) 2024/1689 und die Verordnung (EU) 2016/679 mit Stand September 2026.
 
 ### 3. PLAY
 
@@ -36,9 +36,9 @@ In Vorbereitung. Eine Einordnung von Art. 4 der KI-Verordnung für Einrichtungen
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | Startseite mit Orientierungsrad, Handlungsfeldern und weiteren Zugängen |
+| `index.html` | Startseite mit Orientierungsrad und weiteren Zugängen |
 | `orientierungsrad.html` | Weiterleitung der früheren Adresse auf die Startseite |
-| `praxisbeispiele.html` | Sammlung der Praxisbeispiele mit Filter |
+| `praxisbeispiele.html` | Anwendungen und Fallbeispiele, filterbar nach Handlungsfeld |
 | `quellen.html` | Literatur und Referenzen im APA-Format, filterbar nach Perspektive und Handlungsfeld |
 | `play.html` | Platzhalter PLAY |
 | `kritischer-diskurs.html` | Platzhalter kritischer Diskurs |

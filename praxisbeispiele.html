@@ -48,6 +48,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .case-body a{margin-top:auto;padding-top:14px;color:var(--teal);font-weight:700;text-decoration:none;font-size:13px}
 .note{margin-top:28px;padding:16px 18px;background:#fff;border:1px dashed #cbd7e2;border-radius:10px;font-size:13px;color:var(--muted)}
 .note b{color:var(--navy)}.note a{color:var(--teal)}
+.filter-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:8px}
+.app-card[hidden]{display:none}
 .block-head{margin:8px 0 18px}.block-head h2{font-size:24px;color:var(--navy);margin-bottom:4px}.block-head p{font-size:14px;color:var(--muted);max-width:800px}
 .appgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:56px}
 .app-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:20px;transition:box-shadow .18s,border-color .18s}
@@ -80,10 +82,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
     <h1>Praxisbeispiele</h1>
     <p class="subtitle">Anwendungen aus der Erwachsenenbildung, die mit KI-Unterstützung entstanden sind, und Fallbeispiele für typische Situationen in Einrichtungen. Alle Beispiele sind den Handlungsfeldern des Orientierungsrads zugeordnet.</p>
   </header>
+  <p class="filter-label">Nach Handlungsfeld filtern</p>
+  <div class="filters" role="group" aria-label="Nach Handlungsfeld filtern"><button type="button" aria-pressed="true" data-f="alle">Alle</button><button type="button" aria-pressed="false" data-f="werte">Werte &amp; Ziele</button><button type="button" aria-pressed="false" data-f="quellen">Quellen &amp; Wissen</button><button type="button" aria-pressed="false" data-f="bias">Bias &amp; Repräsentation</button><button type="button" aria-pressed="false" data-f="autonomie">Autonomie</button><button type="button" aria-pressed="false" data-f="transparenz">Transparenz</button><button type="button" aria-pressed="false" data-f="verantwortung">Verantwortung</button></div>
   <section id="anwendungen">
-    <div class="block-head"><div class="eyebrow">Anwendungen aus der Praxis</div><h2>Mit KI entwickelt, fachlich verantwortet</h2>
-    <p>Die vier Anwendungen zeigen, wie KI bei der Entwicklung digitaler Bildungswerkzeuge mitwirken kann. Zu jeder Anwendung ist beschrieben, welche Aufgaben die KI übernommen hat und wo die fachliche Verantwortung liegt.</p></div>
-    <div class="appgrid"><article class="app-card" id="wirkung">
+    <div class="block-head" style="margin-top:22px"><div class="eyebrow">Anwendungen aus der Praxis</div><h2>Mit KI entwickelt, fachlich verantwortet</h2>
+    <p>Die sechs Anwendungen zeigen, wie KI bei der Entwicklung digitaler Bildungswerkzeuge mitwirken kann. Zu jeder Anwendung ist beschrieben, welche Aufgaben die KI übernommen hat und wo die fachliche Verantwortung liegt.</p></div>
+    <div class="appgrid"><article class="app-card" id="wirkung" data-felder="verantwortung werte">
   <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Wirkungs-Werkstatt</h3><p>Digitale Werkzeuge für wirkungsorientierte Erwachsenenbildung</p></div>
   <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Browserbasierte Toolbox für Einrichtungen der Erwachsenenbildung mit vier Zugängen. Werkzeuge unterstützen beim Planen und Auswerten von Wirkung, alternative Verfahren erfassen Veränderungen bei Teilnehmenden, spielerische Anwendungen machen Wirkungsdenken erfahrbar, und ein kritischer Diskurs reflektiert Voraussetzungen und Grenzen von Wirkungsmessung.</p>
   <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Konzept, fachliche Inhalte und Quellenauswahl verantwortet die Autorin.</div>
@@ -91,7 +95,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <p class="von">Elisabeth Vanderheiden</p>
   <p class="app-open"><a href="https://research2026-collab.github.io/Wirksamkeit/" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
 </article>
-<article class="app-card" id="persona">
+<article class="app-card" id="persona" data-felder="bias werte">
   <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Persona-Werkstatt</h3><p>Angebote der finanziellen Bildung für Erwachsene planen</p></div>
   <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Planungswerkzeug mit 15 Personas, die typische Zielgruppen der finanziellen Grundbildung in sehr unterschiedlichen Lebenslagen abbilden. Planende wählen eine Persona oder legen eine eigene an, entwickeln daraus ein passendes Angebot und speichern die Ergebnisse lokal.</p>
   <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Konzept und Personas verantwortet die Autorin.</div>
@@ -99,7 +103,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <p class="von">Elisabeth Vanderheiden</p>
   <p class="app-open"><a href="https://research2026-collab.github.io/FiBi/personas.html" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
 </article>
-<article class="app-card" id="faq">
+<article class="app-card" id="faq" data-felder="transparenz quellen">
   <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>FAQ-Whiteboard KI & Urheberrecht</h3><p>Fragen und Antworten zu Urheberrecht, Datenschutz und EU AI Act im Unterrichtskontext</p></div>
   <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Interaktive Sammlung von Fragen und Antworten für Lehrkräfte, insbesondere in Sprachkursen. Die Fragen sind nach Datenschutz, Urheberrecht, EU AI Act und Sprachkursen gegliedert und lassen sich filtern. Weitere Fragen können über ein Formular eingereicht werden.</p>
   <div class="ki"><b>Rolle der KI</b>Die Antworten wurden laut Hinweis in der Anwendung mit KI-Unterstützung erstellt. Die Anwendung weist ausdrücklich darauf hin, dass sie keine Rechtsberatung ersetzt.</div>
@@ -107,66 +111,84 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <p class="von">Research2026-collab</p>
   <p class="app-open"><a href="https://research2026-collab.github.io/faq-ki-recht/faq_whiteboard.html" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
 </article>
-<article class="app-card" id="einfach">
+<article class="app-card" id="einfach" data-felder="werte verantwortung">
   <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Einfach.Machen Wissensraum</h3><p>Wissensraum für Tools und Materialien in Einfacher und Leichter Sprache</p></div>
   <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Kuratierte Sammlung von Werkzeugen und Materialien in Einfacher und Leichter Sprache. Einträge sind nach Themenbereich, Zielgruppe, Format, Sprachniveau sowie Zugangs- und Lizenzmodell erschlossen. Neue Materialien können eingereicht werden und durchlaufen eine redaktionelle Prüfung.</p>
   <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Auswahl und Prüfung der Materialien liegen bei der Redaktion des Projekts.</div>
   <h4>Bezug zum Orientierungsrad</h4><p>Der Wissensraum verbindet digitale Umsetzung mit einem Teilhabeziel. Die redaktionelle Prüfung sichert, dass über Aufnahme und Qualität der Materialien Menschen entscheiden.</p><div class="ftags"><a href="index.html#werte"><span class="tag">Werte &amp; Ziele</span></a><a href="index.html#verantwortung"><span class="tag">Verantwortung</span></a></div>
   <p class="von">Katholische Erwachsenenbildung Rheinland-Pfalz, gefördert durch das Ministerium für Wissenschaft, Weiterbildung und Gesundheit</p>
   <p class="app-open"><a href="https://research2026-collab.github.io/Einfach_Machen_Wissensbasis/" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article>
+<article class="app-card" id="spiegel" data-felder="autonomie werte">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>S.P.I.E.G.E.L.</h3><p>Menschen und ihre Sehnsüchte</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Beteiligungsprojekt, das persönliche Sehnsüchte zum Ausgangspunkt gesellschaftlichen Dialogs macht. Menschen tragen Texte, Bilder oder Wünsche zu einem Sehnsuchtsmosaik bei, ein interaktiver Sehnsuchtsatlas bündelt die Beiträge, und eine Timeline zeichnet politische Sehnsüchte im historischen Verlauf nach. Workshops und Impulskarten übertragen die Arbeit in Gruppen vor Ort.</p>
+  <div class="ki"><b>Rolle der KI</b>Die Web-Anwendungen wurden mit KI-Unterstützung programmiert und gestaltet. Konzept, Beteiligungsformate und Moderation verantwortet das Projektteam.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>Die Beiträge stammen von Menschen und bleiben deren Stimmen. KI unterstützt die technische Aufbereitung, ohne die Deutung der Sehnsüchte zu übernehmen.</p><div class="ftags"><a href="index.html#autonomie"><span class="tag">Autonomie</span></a><a href="index.html#werte"><span class="tag">Werte &amp; Ziele</span></a></div>
+  <p class="von">Katholische Erwachsenenbildung Rheinland-Pfalz, gefördert durch das Ministerium für Arbeit, Soziales, Transformation und Digitalisierung Rheinland-Pfalz</p>
+  <p class="app-open"><a href="https://spiegel.keb-rheinland-pfalz.de" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article>
+<article class="app-card" id="escape" data-felder="transparenz bias">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Das Archiv der Menschlichkeit</h3><p>Digitaler Escape Room</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Digitaler Escape Room auf der Plattform Spatial, der allein oder mit bis zu fünf Personen gespielt werden kann. Mehrere Räume lassen sich in einem Durchgang oder mit Pausen lösen, ein Durchgang dauert etwa 15 bis 30 Minuten. Eine Reflexion im Anschluss gehört zum Spiel. Für die Teilnahme ist ein Konto bei Spatial erforderlich.</p>
+  <div class="ki"><b>Rolle der KI</b>Räume, Rätsel und Bildmaterial entstanden mit KI-Unterstützung. Bildungsziel, Dramaturgie und Reflexionsphase verantwortet das Projektteam.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>KI-generierte Räume und Bilder prägen, wie Menschlichkeit dargestellt wird. Das Format lädt dazu ein, die Beteiligung von KI offenzulegen und die entstandenen Bilder in der Reflexionsphase gemeinsam zu betrachten.</p><div class="ftags"><a href="index.html#transparenz"><span class="tag">Transparenz</span></a><a href="index.html#bias"><span class="tag">Bias &amp; Repräsentation</span></a></div>
+  <p class="von">Katholische Erwachsenenbildung Rheinland-Pfalz, gefördert durch das Ministerium für Arbeit, Soziales, Transformation und Digitalisierung Rheinland-Pfalz</p>
+  <p class="app-open"><a href="https://keb-rheinland-pfalz.de/escape-room/" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
 </article></div>
   </section>
   <section id="fallbeispiele">
   <div class="block-head"><div class="eyebrow">Fallbeispiele</div><h2>Situationen aus dem Alltag von Einrichtungen</h2>
   <p>Konstruierte Fälle aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit, jeweils mit einer Prüffrage für die Arbeit im eigenen Team.</p></div>
-  <div class="filters" role="group" aria-label="Nach Handlungsfeld filtern"><button type="button" aria-pressed="true" data-f="alle">Alle</button><button type="button" aria-pressed="false" data-f="werte">Werte &amp; Ziele</button><button type="button" aria-pressed="false" data-f="quellen">Quellen &amp; Wissen</button><button type="button" aria-pressed="false" data-f="bias">Bias &amp; Repräsentation</button><button type="button" aria-pressed="false" data-f="autonomie">Autonomie</button><button type="button" aria-pressed="false" data-f="transparenz">Transparenz</button><button type="button" aria-pressed="false" data-f="verantwortung">Verantwortung</button></div>
-  <div class="cases"><article class="case" data-field="werte">
+  <div class="cases"><article class="case" id="fall-werte" data-field="werte">
   <div class="case-head"><span class="tag">Werte &amp; Ziele</span><span class="tag">Leitung</span><h2>Stimmungsanalyse im Online-Kurs</h2></div>
   <div class="case-body"><h3>Situation</h3><p>Ein Softwareanbieter bietet einer Familienbildungsstätte ein Zusatzmodul für ihre Videokonferenzen an. Es wertet Mimik und Stimme der Teilnehmenden aus und meldet der Kursleitung, wann Aufmerksamkeit und Stimmung sinken.</p><h3>Möglicher Umgang</h3><p>Die Leitung prüft das Angebot am eigenen Leitbild, das Teilnehmende als selbstbestimmte Erwachsene versteht, und an der Rechtslage. Die KI-Verordnung untersagt seit dem 2. Februar 2025 KI-Systeme, die in Bildungseinrichtungen Emotionen natürlicher Personen ableiten, sofern sie nicht medizinischen oder Sicherheitszwecken dienen (Art. 5 Abs. 1 lit. f). Die Einrichtung lehnt das Modul ab. Kursleitende erhalten stattdessen Anregungen für kurze, freiwillige Rückmelderunden im Kurs.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Welches pädagogische Ziel soll erreicht werden, und welcher Weg dorthin kommt ohne Auswertung persönlicher Merkmale aus?</p>
   <a href="index.html#werte">Im Orientierungsrad ansehen →</a></div>
 </article>
-<article class="case" data-field="quellen">
+<article class="case" id="fall-quellen" data-field="quellen">
   <div class="case-head"><span class="tag">Quellen &amp; Wissen</span><span class="tag">Kursleitung</span><h2>Erfundene Fundstellen im Kursmaterial</h2></div>
   <div class="case-body"><h3>Situation</h3><p>Eine Kursleiterin bereitet einen Abendkurs zur Patientenverfügung vor. Ein Sprachmodell erstellt ihr einen flüssig formulierten Überblick zur Rechtslage mit drei Fundstellen.</p><h3>Möglicher Umgang</h3><p>Beim Abgleich zeigt sich, dass eine Fundstelle nicht existiert und eine zweite eine überholte Fassung wiedergibt. Die Kursleiterin ersetzt den Überblick durch Informationsmaterial aus amtlichen und fachlich geprüften Quellen. Im Kurs nutzt sie den Vorgang als Beispiel dafür, wie sich KI-Antworten prüfen lassen.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Welche Aussagen im Material lassen sich an einer überprüfbaren Originalquelle festmachen?</p>
   <a href="index.html#quellen">Im Orientierungsrad ansehen →</a></div>
 </article>
-<article class="case" data-field="bias">
+<article class="case" id="fall-bias" data-field="bias">
   <div class="case-head"><span class="tag">Bias &amp; Repräsentation</span><span class="tag">Öffentlichkeitsarbeit</span><h2>Titelbilder für das Programmheft</h2></div>
   <div class="case-body"><h3>Situation</h3><p>Für das Programmheft der Familienbildung erzeugt die Öffentlichkeitsarbeit Titelbilder mit einem Bildgenerator. Der Auftrag lautet „Eltern mit Kindern beim gemeinsamen Lernen“. Fast alle Ergebnisse zeigen junge, schlanke, hellhäutige Paare aus Mann und Frau in großzügigen Wohnungen.</p><h3>Möglicher Umgang</h3><p>Das Team legt die Bilder neben die tatsächliche Zielgruppe der Angebote, zu der Alleinerziehende, Großeltern, Familien mit Einwanderungsgeschichte und Familien mit geringem Einkommen gehören. Die Bildaufträge werden präzisiert, die Auswahl erfolgt im Vieraugenprinzip. Für einzelne Motive greift die Einrichtung auf Fotos aus eigenen Veranstaltungen zurück, deren Verwendung die Abgebildeten zugestimmt haben.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Würden sich die Menschen, für die das Angebot gedacht ist, in diesen Bildern wiederfinden?</p>
   <a href="index.html#bias">Im Orientierungsrad ansehen →</a></div>
 </article>
-<article class="case" data-field="autonomie">
+<article class="case" id="fall-autonomie" data-field="autonomie">
   <div class="case-head"><span class="tag">Autonomie</span><span class="tag">Kursleitung</span><h2>Empfehlung einer Lernplattform</h2></div>
   <div class="case-body"><h3>Situation</h3><p>In einem Deutschkurs auf Niveau B1 arbeiten die Teilnehmenden ergänzend mit einer adaptiven Lernplattform. Nach einigen Übungen empfiehlt sie einem Teilnehmer, auf A2-Material zurückzugehen. Er ist verunsichert und fragt, ob er den Kurs wechseln muss.</p><h3>Möglicher Umgang</h3><p>Die Kursleiterin bespricht die Empfehlung mit ihm und zeigt, auf welchen Übungen sie beruht. Gemeinsam vereinbaren sie, einzelne Grammatikthemen gezielt zu wiederholen, und er bleibt im Kurs. Die Einrichtung legt fest, dass Empfehlungen der Plattform keine Einstufung ersetzen. KI-Systeme, die über Zugang oder Zuordnung zu Bildungsangeboten entscheiden, Lernergebnisse bewerten oder das angemessene Bildungsniveau bestimmen, können nach Anhang III Nr. 3 der KI-Verordnung als Hochrisiko-Systeme gelten.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Kann die betroffene Person die Empfehlung nachvollziehen, zurückweisen und selbst über ihren Lernweg entscheiden?</p>
   <a href="index.html#autonomie">Im Orientierungsrad ansehen →</a></div>
 </article>
-<article class="case" data-field="transparenz">
+<article class="case" id="fall-transparenz" data-field="transparenz">
   <div class="case-head"><span class="tag">Transparenz</span><span class="tag">Beratung &amp; Anmeldung</span><h2>Chatbot auf der Website</h2></div>
   <div class="case-body"><h3>Situation</h3><p>Eine Einrichtung plant einen Chatbot, der auf der Website Fragen zu Kursen, Gebühren und Anmeldung beantwortet. In einem internen Test halten einige Kolleginnen und Kollegen die Antworten für Nachrichten einer Mitarbeiterin.</p><h3>Möglicher Umgang</h3><p>Die Einrichtung wählt ein System, das sich zu Beginn jedes Gesprächs deutlich als KI zu erkennen gibt, und ergänzt einen gut sichtbaren Weg zur persönlichen Beratung. Seit dem 2. August 2026 verpflichtet Art. 50 Abs. 1 der KI-Verordnung Anbieter, solche Systeme so zu gestalten, dass Menschen über die Interaktion mit einer KI informiert werden, sofern dies nicht offensichtlich ist. Zusätzlich hält die Einrichtung fest, welche Anliegen der Chatbot an Menschen weitergibt, etwa Fragen zu Ermäßigungen im Einzelfall.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Wissen alle Beteiligten zu jedem Zeitpunkt, ob sie mit einem Menschen oder mit einem KI-System kommunizieren?</p>
   <a href="index.html#transparenz">Im Orientierungsrad ansehen →</a></div>
 </article>
-<article class="case" data-field="verantwortung">
+<article class="case" id="fall-verantwortung" data-field="verantwortung">
   <div class="case-head"><span class="tag">Verantwortung</span><span class="tag">Leitung &amp; Kursleitung</span><h2>Teilnehmendendaten im KI-Werkzeug</h2></div>
   <div class="case-body"><h3>Situation</h3><p>Ein freiberuflicher Dozent lässt sich für einen Kurs zur Tabellenkalkulation personalisierte Übungsaufgaben von einem frei verfügbaren KI-Dienst erstellen. Dafür lädt er die Teilnehmendenliste mit Namen und E-Mail-Adressen hoch. Eine der Aufgaben enthält zudem eine fehlerhafte Formel.</p><h3>Möglicher Umgang</h3><p>Die Einrichtung klärt mit ihm, dass personenbezogene Daten der Teilnehmenden nur im Rahmen der Datenschutz-Grundverordnung und nur in freigegebenen Diensten verarbeitet werden dürfen, und nimmt Regeln zum KI-Einsatz in ihre Honorarvereinbarungen auf. Für die fachliche Richtigkeit der Materialien bleibt die Lehrperson verantwortlich. Soweit die Einrichtung KI-Systeme selbst einsetzt, verpflichtet sie Art. 4 der KI-Verordnung, die KI-Kompetenz ihres Personals und weiterer in ihrem Auftrag tätiger Personen zu fördern. Sie öffnet ihre Fortbildung deshalb auch für Honorarkräfte.</p>
   <p class="pq"><span>Prüffrage für Ihr Team</span>Ist für jeden Schritt vom Werkzeug bis zum Material geklärt, wer prüft, wer entscheidet und wer für Fehler einsteht?</p>
   <a href="index.html#verantwortung">Im Orientierungsrad ansehen →</a></div>
 </article></div>
   </section>
-  <p class="note"><b>Hinweis.</b> Die Fallbeispiele sind konstruierte Fallbeispiele, die typische Situationen verdichten. Rechtliche Hinweise geben den Stand der KI-Verordnung und der Datenschutz-Grundverordnung zum September 2026 wieder und ersetzen keine Rechtsberatung im Einzelfall. Die Sammlung wird fortlaufend erweitert. Alle Quellen finden Sie unter <a href="quellen.html">Literatur und Referenzen</a>.</p>
+  <p class="note"><b>Hinweis.</b> Die Fallbeispiele sind konstruiert und verdichten typische Situationen. Rechtliche Hinweise geben den Stand der KI-Verordnung und der Datenschutz-Grundverordnung zum September 2026 wieder und ersetzen keine Rechtsberatung im Einzelfall. Die Sammlung wird fortlaufend erweitert. Alle Quellen finden Sie unter <a href="quellen.html">Literatur und Referenzen</a>.</p>
 
 </div>
 <footer class="site-footer">
   <p>&copy; Elisabeth Vanderheiden · <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 </footer>
 <script>
-const chips=document.querySelectorAll('.filters button'),cs=document.querySelectorAll('.case');
-chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.setAttribute('aria-pressed',x===c));
-cs.forEach(a=>a.hidden=!(c.dataset.f==='alle'||a.dataset.field===c.dataset.f))}));
+const chips=document.querySelectorAll('.filters button'),cs=document.querySelectorAll('.case'),as=document.querySelectorAll('.app-card');
+function apply(f){chips.forEach(x=>x.setAttribute('aria-pressed',x.dataset.f===f));
+cs.forEach(a=>a.hidden=!(f==='alle'||a.dataset.field===f));
+as.forEach(a=>a.hidden=!(f==='alle'||a.dataset.felder.split(' ').includes(f)))}
+chips.forEach(c=>c.addEventListener('click',()=>apply(c.dataset.f)));
+const pf=new URLSearchParams(location.search).get('feld');if(pf&&document.querySelector('.filters [data-f="'+pf+'"]'))apply(pf);
 </script>
 </body>
 </html>
