@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fallbeispiele zum Einsatz von KI in Einrichtungen der Erwachsenenbildung mit Prüffragen.">
+<title>Praxisbeispiele – KI-Kompass EB</title>
+<style>
+:root{--navy:#1a365d;--navy-light:#2a4a7f;--teal:#2b7a78;--teal-dark:#246b69;--teal-light:#3aafa9;
+--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--muted:#4a5568;--light:#718096;--border:#e2e8f0;
+--soft-teal:#edf8f7;--seg1:#e6f1f2;--seg2:#dcebed;--seg3:#edf5f5;--seg4:#d7e8ea}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+.app{max-width:1040px;margin:0 auto;padding:24px 20px 72px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:10px 0 18px;border-bottom:1px solid var(--border)}
+.brand{font-weight:800;color:var(--navy);font-size:15px;text-decoration:none}
+.topnav nav{display:flex;gap:18px;flex-wrap:wrap}
+.topnav nav a{color:var(--muted);text-decoration:none;font-size:13px}
+.topnav nav a:hover,.topnav nav a[aria-current]{color:var(--teal)}
+.topnav nav a[aria-current]{font-weight:700}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.header{max-width:980px;padding:56px 0 30px}
+.header h1{font-size:34px;line-height:1.15;font-weight:800;color:var(--navy);margin-bottom:14px}
+.header .subtitle{font-size:16px;color:var(--muted);max-width:820px}
+.section-head{margin:0 0 20px}.section-head h2{font-size:22px;color:var(--navy);margin-bottom:5px}.section-head p{font-size:14px;color:var(--muted);max-width:780px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--soft-teal);border-radius:999px;padding:2px 9px;margin:0 5px 4px 0}
+footer.site-footer{border-top:1px solid var(--border);background:#eef0f3;padding:14px 20px}
+footer.site-footer p{max-width:1040px;margin:0 auto;font-size:13px;color:#8a8a86;text-align:center}
+footer.site-footer a{color:#8a8a86}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--teal-light);outline-offset:2px}
+@media(max-width:600px){.topnav{flex-direction:column;align-items:flex-start}.header{padding:40px 0 24px}.header h1{font-size:29px}}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filters button{border:1px solid var(--border);background:#fff;color:var(--navy);font:inherit;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.filters button:hover{border-color:var(--teal)}
+.filters button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.case{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.case[hidden]{display:none}
+.case-head{padding:18px 20px 12px;border-bottom:1px solid var(--border)}
+.case-head h2{font-size:19px;color:var(--navy);line-height:1.25;margin-top:6px}
+.case-body{padding:14px 20px 18px;font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;flex:1}
+.case-body h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin:10px 0 3px}
+.case-body h3:first-child{margin-top:0}
+.case-body .pq{margin-top:14px;padding:12px 14px;background:var(--soft-teal);border-radius:10px;color:var(--navy);font-weight:700}
+.case-body .pq span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:2px}
+.case-body a{margin-top:auto;padding-top:14px;color:var(--teal);font-weight:700;text-decoration:none;font-size:13px}
+.note{margin-top:28px;padding:16px 18px;background:#fff;border:1px dashed #cbd7e2;border-radius:10px;font-size:13px;color:var(--muted)}
+.note b{color:var(--navy)}.note a{color:var(--teal)}
+@media(max-width:800px){.cases{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topnav">
+    <a class="brand" href="index.html">KI-Kompass EB</a>
+    <nav aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="orientierungsrad.html">Orientierungsrad</a><a href="praxisbeispiele.html" aria-current="page">Praxis</a><a href="play.html">PLAY</a><a href="kritischer-diskurs.html">Kritischer Diskurs</a><a href="quellen.html">Quellen</a></nav>
+  </div>
+
+  <header class="header">
+    <div class="eyebrow">02 · Praxis erkunden</div>
+    <h1>Praxisbeispiele</h1>
+    <p class="subtitle">Typische Situationen aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit. Jedes Beispiel ist einem Handlungsfeld des Orientierungsrads zugeordnet und endet mit einer Prüffrage für die Arbeit im eigenen Team.</p>
+  </header>
+  <div class="filters" role="group" aria-label="Nach Handlungsfeld filtern"><button type="button" aria-pressed="true" data-f="alle">Alle</button><button type="button" aria-pressed="false" data-f="werte">Werte &amp; Ziele</button><button type="button" aria-pressed="false" data-f="quellen">Quellen &amp; Wissen</button><button type="button" aria-pressed="false" data-f="bias">Bias &amp; Repräsentation</button><button type="button" aria-pressed="false" data-f="autonomie">Autonomie</button><button type="button" aria-pressed="false" data-f="transparenz">Transparenz</button><button type="button" aria-pressed="false" data-f="verantwortung">Verantwortung</button></div>
+  <div class="cases"><article class="case" data-field="werte">
+  <div class="case-head"><span class="tag">Werte &amp; Ziele</span><span class="tag">Leitung</span><h2>Stimmungsanalyse im Online-Kurs</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>Ein Softwareanbieter bietet einer Familienbildungsstätte ein Zusatzmodul für ihre Videokonferenzen an. Es wertet Mimik und Stimme der Teilnehmenden aus und meldet der Kursleitung, wann Aufmerksamkeit und Stimmung sinken.</p><h3>Möglicher Umgang</h3><p>Die Leitung prüft das Angebot am eigenen Leitbild, das Teilnehmende als selbstbestimmte Erwachsene versteht, und an der Rechtslage. Die KI-Verordnung untersagt seit dem 2. Februar 2025 KI-Systeme, die in Bildungseinrichtungen Emotionen natürlicher Personen ableiten, sofern sie nicht medizinischen oder Sicherheitszwecken dienen (Art. 5 Abs. 1 lit. f). Die Einrichtung lehnt das Modul ab. Kursleitende erhalten stattdessen Anregungen für kurze, freiwillige Rückmelderunden im Kurs.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Welches pädagogische Ziel soll erreicht werden, und welcher Weg dorthin kommt ohne Auswertung persönlicher Merkmale aus?</p>
+  <a href="orientierungsrad.html#werte">Im Orientierungsrad ansehen →</a></div>
+</article>
+<article class="case" data-field="quellen">
+  <div class="case-head"><span class="tag">Quellen &amp; Wissen</span><span class="tag">Kursleitung</span><h2>Erfundene Fundstellen im Kursmaterial</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>Eine Kursleiterin bereitet einen Abendkurs zur Patientenverfügung vor. Ein Sprachmodell erstellt ihr einen flüssig formulierten Überblick zur Rechtslage mit drei Fundstellen.</p><h3>Möglicher Umgang</h3><p>Beim Abgleich zeigt sich, dass eine Fundstelle nicht existiert und eine zweite eine überholte Fassung wiedergibt. Die Kursleiterin ersetzt den Überblick durch Informationsmaterial aus amtlichen und fachlich geprüften Quellen. Im Kurs nutzt sie den Vorgang als Beispiel dafür, wie sich KI-Antworten prüfen lassen.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Welche Aussagen im Material lassen sich an einer überprüfbaren Originalquelle festmachen?</p>
+  <a href="orientierungsrad.html#quellen">Im Orientierungsrad ansehen →</a></div>
+</article>
+<article class="case" data-field="bias">
+  <div class="case-head"><span class="tag">Bias &amp; Repräsentation</span><span class="tag">Öffentlichkeitsarbeit</span><h2>Titelbilder für das Programmheft</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>Für das Programmheft der Familienbildung erzeugt die Öffentlichkeitsarbeit Titelbilder mit einem Bildgenerator. Der Auftrag lautet „Eltern mit Kindern beim gemeinsamen Lernen“. Fast alle Ergebnisse zeigen junge, schlanke, hellhäutige Paare aus Mann und Frau in großzügigen Wohnungen.</p><h3>Möglicher Umgang</h3><p>Das Team legt die Bilder neben die tatsächliche Zielgruppe der Angebote, zu der Alleinerziehende, Großeltern, Familien mit Einwanderungsgeschichte und Familien mit geringem Einkommen gehören. Die Bildaufträge werden präzisiert, die Auswahl erfolgt im Vieraugenprinzip. Für einzelne Motive greift die Einrichtung auf Fotos aus eigenen Veranstaltungen zurück, deren Verwendung die Abgebildeten zugestimmt haben.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Würden sich die Menschen, für die das Angebot gedacht ist, in diesen Bildern wiederfinden?</p>
+  <a href="orientierungsrad.html#bias">Im Orientierungsrad ansehen →</a></div>
+</article>
+<article class="case" data-field="autonomie">
+  <div class="case-head"><span class="tag">Autonomie</span><span class="tag">Kursleitung</span><h2>Empfehlung einer Lernplattform</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>In einem Deutschkurs auf Niveau B1 arbeiten die Teilnehmenden ergänzend mit einer adaptiven Lernplattform. Nach einigen Übungen empfiehlt sie einem Teilnehmer, auf A2-Material zurückzugehen. Er ist verunsichert und fragt, ob er den Kurs wechseln muss.</p><h3>Möglicher Umgang</h3><p>Die Kursleiterin bespricht die Empfehlung mit ihm und zeigt, auf welchen Übungen sie beruht. Gemeinsam vereinbaren sie, einzelne Grammatikthemen gezielt zu wiederholen, und er bleibt im Kurs. Die Einrichtung legt fest, dass Empfehlungen der Plattform keine Einstufung ersetzen. KI-Systeme, die über Zugang oder Zuordnung zu Bildungsangeboten entscheiden, Lernergebnisse bewerten oder das angemessene Bildungsniveau bestimmen, können nach Anhang III Nr. 3 der KI-Verordnung als Hochrisiko-Systeme gelten.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Kann die betroffene Person die Empfehlung nachvollziehen, zurückweisen und selbst über ihren Lernweg entscheiden?</p>
+  <a href="orientierungsrad.html#autonomie">Im Orientierungsrad ansehen →</a></div>
+</article>
+<article class="case" data-field="transparenz">
+  <div class="case-head"><span class="tag">Transparenz</span><span class="tag">Beratung &amp; Anmeldung</span><h2>Chatbot auf der Website</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>Eine Einrichtung plant einen Chatbot, der auf der Website Fragen zu Kursen, Gebühren und Anmeldung beantwortet. In einem internen Test halten einige Kolleginnen und Kollegen die Antworten für Nachrichten einer Mitarbeiterin.</p><h3>Möglicher Umgang</h3><p>Die Einrichtung wählt ein System, das sich zu Beginn jedes Gesprächs deutlich als KI zu erkennen gibt, und ergänzt einen gut sichtbaren Weg zur persönlichen Beratung. Seit dem 2. August 2026 verpflichtet Art. 50 Abs. 1 der KI-Verordnung Anbieter, solche Systeme so zu gestalten, dass Menschen über die Interaktion mit einer KI informiert werden, sofern dies nicht offensichtlich ist. Zusätzlich hält die Einrichtung fest, welche Anliegen der Chatbot an Menschen weitergibt, etwa Fragen zu Ermäßigungen im Einzelfall.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Wissen alle Beteiligten zu jedem Zeitpunkt, ob sie mit einem Menschen oder mit einem KI-System kommunizieren?</p>
+  <a href="orientierungsrad.html#transparenz">Im Orientierungsrad ansehen →</a></div>
+</article>
+<article class="case" data-field="verantwortung">
+  <div class="case-head"><span class="tag">Verantwortung</span><span class="tag">Leitung &amp; Kursleitung</span><h2>Teilnehmendendaten im KI-Werkzeug</h2></div>
+  <div class="case-body"><h3>Situation</h3><p>Ein freiberuflicher Dozent lässt sich für einen Kurs zur Tabellenkalkulation personalisierte Übungsaufgaben von einem frei verfügbaren KI-Dienst erstellen. Dafür lädt er die Teilnehmendenliste mit Namen und E-Mail-Adressen hoch. Eine der Aufgaben enthält zudem eine fehlerhafte Formel.</p><h3>Möglicher Umgang</h3><p>Die Einrichtung klärt mit ihm, dass personenbezogene Daten der Teilnehmenden nur im Rahmen der Datenschutz-Grundverordnung und nur in freigegebenen Diensten verarbeitet werden dürfen, und nimmt Regeln zum KI-Einsatz in ihre Honorarvereinbarungen auf. Für die fachliche Richtigkeit der Materialien bleibt die Lehrperson verantwortlich. Soweit die Einrichtung KI-Systeme selbst einsetzt, verpflichtet sie Art. 4 der KI-Verordnung, die KI-Kompetenz ihres Personals und weiterer in ihrem Auftrag tätiger Personen zu fördern. Sie öffnet ihre Fortbildung deshalb auch für Honorarkräfte.</p>
+  <p class="pq"><span>Prüffrage für Ihr Team</span>Ist für jeden Schritt vom Werkzeug bis zum Material geklärt, wer prüft, wer entscheidet und wer für Fehler einsteht?</p>
+  <a href="orientierungsrad.html#verantwortung">Im Orientierungsrad ansehen →</a></div>
+</article></div>
+  <p class="note"><b>Hinweis.</b> Die Beispiele sind konstruierte Fallbeispiele, die typische Situationen verdichten. Rechtliche Hinweise geben den Stand der KI-Verordnung und der Datenschutz-Grundverordnung zum September 2026 wieder und ersetzen keine Rechtsberatung im Einzelfall. Die Sammlung wird fortlaufend erweitert. Alle Quellen finden Sie unter <a href="quellen.html">Literatur und Referenzen</a>.</p>
+
+</div>
+<footer class="site-footer">
+  <p>&copy; Elisabeth Vanderheiden · <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+</footer>
+<script>
+const chips=document.querySelectorAll('.filters button'),cs=document.querySelectorAll('.case');
+chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.setAttribute('aria-pressed',x===c));
+cs.forEach(a=>a.hidden=!(c.dataset.f==='alle'||a.dataset.field===c.dataset.f))}));
+</script>
+</body>
+</html>

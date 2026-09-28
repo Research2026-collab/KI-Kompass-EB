@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Orientierung, Praxisbeispiele und Werkzeuge für den reflektierten Einsatz von KI in der Erwachsenenbildung.">
+<title>KI-Kompass EB – KI in der Erwachsenenbildung reflektiert einsetzen</title>
+<style>
+:root{--navy:#1a365d;--navy-light:#2a4a7f;--teal:#2b7a78;--teal-dark:#246b69;--teal-light:#3aafa9;
+--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--muted:#4a5568;--light:#718096;--border:#e2e8f0;
+--soft-teal:#edf8f7;--seg1:#e6f1f2;--seg2:#dcebed;--seg3:#edf5f5;--seg4:#d7e8ea}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+.app{max-width:1040px;margin:0 auto;padding:24px 20px 72px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:10px 0 18px;border-bottom:1px solid var(--border)}
+.brand{font-weight:800;color:var(--navy);font-size:15px;text-decoration:none}
+.topnav nav{display:flex;gap:18px;flex-wrap:wrap}
+.topnav nav a{color:var(--muted);text-decoration:none;font-size:13px}
+.topnav nav a:hover,.topnav nav a[aria-current]{color:var(--teal)}
+.topnav nav a[aria-current]{font-weight:700}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.header{max-width:980px;padding:56px 0 30px}
+.header h1{font-size:34px;line-height:1.15;font-weight:800;color:var(--navy);margin-bottom:14px}
+.header .subtitle{font-size:16px;color:var(--muted);max-width:820px}
+.section-head{margin:0 0 20px}.section-head h2{font-size:22px;color:var(--navy);margin-bottom:5px}.section-head p{font-size:14px;color:var(--muted);max-width:780px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--soft-teal);border-radius:999px;padding:2px 9px;margin:0 5px 4px 0}
+footer.site-footer{border-top:1px solid var(--border);background:#eef0f3;padding:14px 20px}
+footer.site-footer p{max-width:1040px;margin:0 auto;font-size:13px;color:#8a8a86;text-align:center}
+footer.site-footer a{color:#8a8a86}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--teal-light);outline-offset:2px}
+@media(max-width:600px){.topnav{flex-direction:column;align-items:flex-start}.header{padding:40px 0 24px}.header h1{font-size:29px}}
+
+.intro{max-width:980px;margin:0 0 40px;color:var(--muted)}
+.intro strong{color:var(--navy);font-weight:800}
+.levels-head{text-align:center;margin:0 0 22px}.levels-head h2{font-size:26px;color:var(--navy);margin-bottom:6px}.levels-head p{color:var(--muted)}
+.wheel-layout{display:grid;grid-template-columns:minmax(320px,520px) 1fr;gap:52px;align-items:center;margin-top:26px}
+.main-wheel{position:relative;width:min(100%,520px);aspect-ratio:1;margin:auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+.wheel-segment{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:var(--seg1);color:var(--navy);transition:background .18s,color .18s,transform .18s;outline:none}
+.wheel-q1{border-radius:100% 0 0 0;padding:60px 60px 30px 70px}
+.wheel-q2{border-radius:0 100% 0 0;background:var(--seg2);padding:60px 70px 30px 60px}
+.wheel-q3{border-radius:0 0 0 100%;background:var(--seg3);padding:30px 60px 60px 70px}
+.wheel-q4{border-radius:0 0 100% 0;background:var(--seg4);padding:30px 70px 60px 60px}
+.wheel-segment:hover,.wheel-segment:focus-visible,.wheel-segment.selected{background:var(--teal);color:#fff;transform:scale(1.012);z-index:2}
+.wheel-no{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;opacity:.78}
+.wheel-segment strong{font-size:19px;line-height:1.22}
+.wheel-centre{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;background:#fff;border:8px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--navy);box-shadow:0 0 0 1px var(--border);z-index:4;pointer-events:none}
+.wheel-centre strong{font-size:20px;line-height:1.08}.wheel-centre span{font-size:12px;color:var(--muted);margin-top:8px}
+.wheel-details{min-height:300px;display:flex;align-items:center}
+.wheel-detail{display:none}.wheel-detail.active{display:block}
+.wheel-detail h3{font-size:26px;color:var(--navy);margin:0 0 16px}.wheel-detail p{color:var(--muted);font-size:15px;line-height:1.65;margin:0 0 13px}
+.wheel-detail p strong{color:var(--navy)}.wheel-detail a{display:inline-block;margin-top:8px;color:var(--teal);font-weight:800;text-decoration:none}
+.status{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--soft-teal);border-radius:999px;padding:3px 10px;margin-bottom:12px}
+.banner{display:flex;align-items:center;gap:18px;margin:44px 0 22px;padding:20px 24px;border-radius:14px;background:var(--teal);color:#fff;text-decoration:none;transition:transform .18s,background .18s}
+.banner:hover{transform:translateY(-2px);background:var(--teal-dark)}
+.banner-icon{width:48px;height:48px;flex:0 0 48px;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+.banner-icon svg{width:27px;height:27px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.banner-copy{flex:1}.banner-copy h3{font-size:18px;margin-bottom:3px}.banner-copy p{font-size:14px;opacity:.94}
+.banner-cta{flex:0 0 auto;background:#fff;color:var(--teal);font-weight:800;font-size:13px;padding:9px 15px;border-radius:999px}
+.info-strip{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;display:flex;flex-direction:column;min-height:190px}
+.info-card h3{font-size:17px;color:var(--navy);margin-bottom:8px}.info-card p{font-size:13px;color:var(--muted)}
+.info-card .info-link{margin-top:auto;padding-top:12px}.info-card .info-link a{color:var(--teal);font-weight:700;text-decoration:none}
+@media(max-width:800px){.wheel-layout{grid-template-columns:1fr;gap:26px}.wheel-details{min-height:0}
+.wheel-segment strong{font-size:16px}.wheel-q1,.wheel-q2,.wheel-q3,.wheel-q4{padding:22px 14px}.wheel-q1,.wheel-q2{padding-top:40px}.wheel-q3,.wheel-q4{padding-bottom:40px}
+.wheel-q1,.wheel-q3{padding-left:30px}.wheel-q2,.wheel-q4{padding-right:30px}
+.wheel-centre strong{font-size:15px}.wheel-centre span{font-size:10px}.info-strip{grid-template-columns:1fr}}
+@media(max-width:650px){.banner{flex-wrap:wrap;align-items:flex-start}.banner-cta{margin-left:66px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topnav">
+    <a class="brand" href="index.html">KI-Kompass EB</a>
+    <nav aria-label="Hauptnavigation"><a href="index.html" aria-current="page">Start</a><a href="orientierungsrad.html">Orientierungsrad</a><a href="praxisbeispiele.html">Praxis</a><a href="play.html">PLAY</a><a href="kritischer-diskurs.html">Kritischer Diskurs</a><a href="quellen.html">Quellen</a></nav>
+  </div>
+
+  <header class="header" id="start">
+    <div class="eyebrow">KI reflektiert einsetzen</div>
+    <h1>KI-Kompass EB</h1>
+    <p class="subtitle">Orientierung, Praxisbeispiele und digitale Werkzeuge für Einrichtungen der Erwachsenenbildung, die Künstliche Intelligenz begründet, verantwortlich und im Sinne ihres Bildungsauftrags einsetzen möchten.</p>
+  </header>
+
+  <div class="intro">
+    <strong>KI verändert, wie Bildungsangebote geplant, beworben, durchgeführt und ausgewertet werden.</strong><br>
+    Der KI-Kompass hilft, diese Veränderungen einzuordnen, konkrete Einsatzsituationen zu prüfen und eigene Entscheidungen fachlich zu begründen.
+  </div>
+
+  <section id="zugaenge">
+    <div class="levels-head">
+      <h2>Was möchten Sie tun?</h2>
+      <p>Wählen Sie ein Segment aus dem Kompassrad und gehen Sie auf Entdeckungsreise.</p>
+    </div>
+    <div class="wheel-layout">
+      <div class="main-wheel" aria-label="Vier Zugänge zum KI-Kompass">
+        <a class="wheel-segment wheel-q1" href="orientierungsrad.html" data-detail="detail-1"><span class="wheel-no">01</span><strong>KI<br>einordnen</strong></a>
+        <a class="wheel-segment wheel-q2" href="praxisbeispiele.html" data-detail="detail-2"><span class="wheel-no">02</span><strong>Praxis<br>erkunden</strong></a>
+        <a class="wheel-segment wheel-q3" href="play.html" data-detail="detail-3"><span class="wheel-no">03 · PLAY</span><strong>KI<br>ausprobieren</strong></a>
+        <a class="wheel-segment wheel-q4" href="kritischer-diskurs.html" data-detail="detail-4"><span class="wheel-no">04</span><strong>KI kritisch<br>beleuchten</strong></a>
+        <div class="wheel-centre"><strong>KI-<br>Kompass</strong><span>Vier Zugänge</span></div>
+      </div>
+      <div class="wheel-details" aria-live="polite">
+        <div class="wheel-detail" id="detail-1">
+          <h3>KI einordnen</h3>
+          <p><strong>Hier finden Sie das Orientierungsrad für den reflektierten Einsatz von KI in der Erwachsenenbildung.</strong></p>
+          <p>Zwei Perspektiven, Alignment und kritische Medienkompetenz, erschließen sechs Handlungsfelder. Zu jedem Feld gibt es einen Denkimpuls, ein Praxisbeispiel und den Bezug zu den maßgeblichen Rahmenwerken.</p>
+          <a href="orientierungsrad.html">Zum Orientierungsrad →</a>
+        </div>
+        <div class="wheel-detail" id="detail-2">
+          <h3>Praxis erkunden</h3>
+          <p><strong>Hier finden Sie Fallbeispiele aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit.</strong></p>
+          <p>Jedes Beispiel beschreibt eine typische Situation, einen möglichen Umgang damit und eine Prüffrage für das eigene Team. Die Sammlung wird fortlaufend erweitert.</p>
+          <a href="praxisbeispiele.html">Zu den Praxisbeispielen →</a>
+        </div>
+        <div class="wheel-detail" id="detail-3">
+          <span class="status">In Vorbereitung</span>
+          <h3>KI ausprobieren</h3>
+          <p><strong>Hier entstehen spielerische und interaktive Zugänge zu KI.</strong></p>
+          <p>Kleine Simulationen und Fallspiele laden dazu ein, KI-Ergebnisse zu prüfen, Entscheidungen abzuwägen und gemeinsam zu reflektieren.</p>
+          <a href="play.html">Zu PLAY →</a>
+        </div>
+        <div class="wheel-detail" id="detail-4">
+          <span class="status">In Vorbereitung</span>
+          <h3>KI kritisch beleuchten</h3>
+          <p><strong>Hier entstehen Argumentationsfelder für einen kritischen Blick auf KI in der Erwachsenenbildung.</strong></p>
+          <p>Die Anwendung wird Annahmen hinter dem KI-Einsatz sichtbar machen und ihre Bedeutung für Bildungsverständnis und pädagogisches Handeln erschließen.</p>
+          <a href="kritischer-diskurs.html">Zum kritischen Diskurs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="banner" href="ki-kompetenz.html" aria-label="KI-Kompetenz nach dem EU AI Act öffnen">
+    <div class="banner-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 4h10l5 5v19H9z"/><path d="M19 4v6h6M13 15h8M13 20h8"/></svg></div>
+    <div class="banner-copy">
+      <h3>KI-Kompetenz nach dem EU AI Act</h3>
+      <p>Hier entsteht eine Einordnung, was Art. 4 der KI-Verordnung für Einrichtungen der Erwachsenenbildung bedeutet.</p>
+    </div>
+    <span class="banner-cta">Öffnen →</span>
+  </a>
+
+  <section class="info-strip">
+    <div class="info-card">
+      <h3>Über den KI-Kompass</h3>
+      <p>Der KI-Kompass richtet sich an Leitungen, Programmplanende, Kursleitende und Beratende in der Erwachsenenbildung. Er verbindet medienpädagogische Grundlagen mit europäischen und internationalen Rahmenwerken für den Einsatz von KI. Alle Zugänge lassen sich unabhängig voneinander nutzen.</p>
+      <p class="info-link"><a href="quellen.html">Grundlagen und Quellen →</a></p>
+    </div>
+    <div class="info-card">
+      <h3>Für die Praxis entwickelt</h3>
+      <p>Die Inhalte sind für den Alltag von Bildungseinrichtungen aufbereitet und eignen sich für Teamsitzungen, Fortbildungen und die Arbeit an eigenen Leitlinien. Für die Nutzung ist kein Benutzerkonto erforderlich.</p>
+      <p class="info-link"><a href="praxisbeispiele.html">Zu den Praxisbeispielen →</a></p>
+    </div>
+  </section>
+
+</div>
+<footer class="site-footer">
+  <p>&copy; Elisabeth Vanderheiden · <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+</footer>
+<script>
+const segs=document.querySelectorAll('.wheel-segment'),details=document.querySelectorAll('.wheel-detail');
+function sel(s){segs.forEach(x=>x.classList.remove('selected'));details.forEach(d=>d.classList.remove('active'));
+s.classList.add('selected');const d=document.getElementById(s.dataset.detail);if(d)d.classList.add('active')}
+segs.forEach(s=>{s.addEventListener('mouseenter',()=>sel(s));s.addEventListener('focus',()=>sel(s));
+s.addEventListener('click',e=>{if(!s.classList.contains('selected')){e.preventDefault();sel(s)}})});
+sel(segs[0]);
+</script>
+</body>
+</html>

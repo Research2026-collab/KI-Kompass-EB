@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Orientierungsrad für den reflektierten Einsatz von KI in der Erwachsenenbildung mit sechs Handlungsfeldern und Praxisbeispielen.">
+<title>Orientierungsrad – KI-Kompass EB</title>
+<style>
+:root{--navy:#1a365d;--navy-light:#2a4a7f;--teal:#2b7a78;--teal-dark:#246b69;--teal-light:#3aafa9;
+--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--muted:#4a5568;--light:#718096;--border:#e2e8f0;
+--soft-teal:#edf8f7;--seg1:#e6f1f2;--seg2:#dcebed;--seg3:#edf5f5;--seg4:#d7e8ea}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+.app{max-width:1040px;margin:0 auto;padding:24px 20px 72px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:10px 0 18px;border-bottom:1px solid var(--border)}
+.brand{font-weight:800;color:var(--navy);font-size:15px;text-decoration:none}
+.topnav nav{display:flex;gap:18px;flex-wrap:wrap}
+.topnav nav a{color:var(--muted);text-decoration:none;font-size:13px}
+.topnav nav a:hover,.topnav nav a[aria-current]{color:var(--teal)}
+.topnav nav a[aria-current]{font-weight:700}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.header{max-width:980px;padding:56px 0 30px}
+.header h1{font-size:34px;line-height:1.15;font-weight:800;color:var(--navy);margin-bottom:14px}
+.header .subtitle{font-size:16px;color:var(--muted);max-width:820px}
+.section-head{margin:0 0 20px}.section-head h2{font-size:22px;color:var(--navy);margin-bottom:5px}.section-head p{font-size:14px;color:var(--muted);max-width:780px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--soft-teal);border-radius:999px;padding:2px 9px;margin:0 5px 4px 0}
+footer.site-footer{border-top:1px solid var(--border);background:#eef0f3;padding:14px 20px}
+footer.site-footer p{max-width:1040px;margin:0 auto;font-size:13px;color:#8a8a86;text-align:center}
+footer.site-footer a{color:#8a8a86}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--teal-light);outline-offset:2px}
+@media(max-width:600px){.topnav{flex-direction:column;align-items:flex-start}.header{padding:40px 0 24px}.header h1{font-size:29px}}
+
+.rad-layout{display:grid;grid-template-columns:minmax(300px,480px) 1fr;gap:44px;align-items:start;margin-top:8px}
+.rad-wrap{position:sticky;top:18px}
+.rad{width:100%;height:auto;display:block;overflow:visible}
+.rad .seg{cursor:pointer;outline:none}
+.rad .seg path{fill:var(--fill);stroke:#fff;stroke-width:3;transition:fill .18s}
+.rad .seg:hover path{fill:#c7e2e0}
+.rad .seg.selected path,.rad .seg:focus-visible path{fill:var(--teal)}
+.rad .seg:focus-visible path{stroke:var(--teal-light);stroke-width:4}
+.rad text{text-anchor:middle;pointer-events:none;font-family:inherit}
+.rad .ptxt,.rad .pq{dominant-baseline:central}
+.rad .lbl{font-size:15.5px;font-weight:800;fill:var(--navy)}
+.rad .q{font-size:12px;fill:var(--muted)}
+.rad .ptxt{font-size:13px;font-weight:800;letter-spacing:.09em;fill:var(--navy)}
+.rad .pq{font-size:11px;fill:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.rad .seg.selected text,.rad .seg:focus-visible text{fill:#fff}
+.rad .centre{pointer-events:none;fill:#fff;stroke:var(--border);stroke-width:1}
+.rad .ctitle{font-size:16px;font-weight:800;fill:var(--navy)}
+.rad .csub{font-size:10.5px;fill:var(--muted)}
+.rad-note{font-size:13px;color:var(--muted);text-align:center;margin-top:12px}
+.rad-note:before{content:"↗";color:var(--teal);font-weight:800;margin-right:7px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 26px 22px}
+.panel h2{font-size:26px;color:var(--navy);line-height:1.2;margin:4px 0 6px}
+.panel .lead{font-size:15px;color:var(--teal);font-weight:700;margin-bottom:16px}
+.mini{padding:14px 16px;border:1px solid var(--border);border-radius:10px;font-size:13.5px;color:var(--muted);margin-bottom:10px}
+.mini.al{background:#f3f6fa}.mini.me{background:var(--soft-teal);border-color:#cfe8e5}
+.mini b{display:block;color:var(--navy);margin-bottom:4px;font-size:13px}
+.impulse{border-left:3px solid var(--teal);padding:12px 16px;background:#f7fafc;margin:16px 0;font-size:13.5px;color:var(--muted)}
+.impulse b{display:block;color:var(--navy);margin-bottom:3px}
+.praxis{border:1px solid #cfe8e5;border-radius:12px;overflow:hidden;margin:18px 0}
+.praxis-head{background:var(--teal);color:#fff;padding:11px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.praxis-head b{font-size:14px}.praxis-head span{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.praxis-body{padding:14px 16px;font-size:13.5px;color:var(--muted);background:#fff}
+.praxis-body h4{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin:10px 0 3px}
+.praxis-body h4:first-child{margin-top:0}
+.praxis-body .pq{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);color:var(--navy);font-weight:700}
+.refs{font-size:12px;color:var(--light);line-height:1.55;border-top:1px solid var(--border);padding-top:12px;margin-top:6px}
+.refs b{color:var(--muted)}.refs a{color:var(--teal)}
+.persp-note{font-size:13px;color:var(--muted);background:#f7fafc;border-radius:10px;padding:12px 14px;margin:14px 0}
+.cards{margin-top:64px;padding-top:40px;border-top:1px solid var(--border)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;min-height:230px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(23,54,93,.07);border-color:#cbd7e2}
+.card h3{font-size:18px;color:var(--navy);margin:6px 0 6px}.card p{font-size:13px;color:var(--muted);margin-bottom:8px}
+.card .case{font-size:12.5px;color:var(--navy)}.card .case b{color:var(--teal)}
+.card button{margin-top:auto;border:0;border-top:1px solid var(--border);background:transparent;color:var(--teal);padding:12px 0 0;text-align:left;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.sources{margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+.source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.source-entry{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:12.5px;color:var(--muted);line-height:1.55;padding-left:38px;text-indent:-22px}
+.source-entry b{color:var(--navy)}
+.source-entry a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(43,122,120,.3)}
+.ref-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:18px 22px;border-radius:14px;background:var(--teal);color:#fff;text-decoration:none;transition:background .18s,transform .18s}
+.ref-banner:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.ref-banner b{display:block;font-size:17px}.ref-banner span{font-size:13.5px;opacity:.95}
+.ref-banner em{font-style:normal;background:#fff;color:var(--teal);font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px}
+.model-note{margin-top:18px;padding:16px 18px;background:var(--soft-teal);border-left:3px solid var(--teal);border-radius:8px;color:var(--muted);font-size:13px}
+.model.note b{color:var(--navy)}.note a{color:var(--teal)}
+@media(max-width:900px){.rad-layout{grid-template-columns:1fr;gap:26px}.rad-wrap{position:static;max-width:520px;margin:0 auto;width:100%}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid,.source-list{grid-template-columns:1fr}.panel{padding:20px 18px}.panel h2{font-size:23px}
+.rad .q,.rad .pq{display:none}.rad .lbl{font-size:18px}.rad .ptxt{font-size:15px;letter-spacing:.05em}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topnav">
+    <a class="brand" href="index.html">KI-Kompass EB</a>
+    <nav aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="orientierungsrad.html" aria-current="page">Orientierungsrad</a><a href="praxisbeispiele.html">Praxis</a><a href="play.html">PLAY</a><a href="kritischer-diskurs.html">Kritischer Diskurs</a><a href="quellen.html">Quellen</a></nav>
+  </div>
+
+  <header class="header">
+    <div class="eyebrow">01 · KI einordnen</div>
+    <h1>Orientierungsrad KI in der Erwachsenenbildung</h1>
+    <p class="subtitle">Ein Orientierungsmodell für den reflektierten und verantwortlichen Einsatz von Künstlicher Intelligenz. Zwei Perspektiven, <b>Alignment</b> und <b>kritische Medienkompetenz</b>, erschließen sechs Handlungsfelder. Jedes Feld verbindet einen Denkimpuls mit einem Praxisbeispiel aus der Erwachsenenbildung.</p>
+  </header>
+
+  <section id="rad" class="rad-layout">
+    <div class="rad-wrap">
+      <svg class="rad" viewBox="0 0 600 600" role="group" aria-label="Orientierungsrad mit sechs Handlungsfeldern und zwei Perspektiven">
+<g class="seg" data-key="werte" tabindex="0" role="button" aria-label="Werte & Ziele: Woran orientieren wir uns?" style="--fill:var(--seg1)"><path d="M155.67 43.86A294.0 294.0 0 0 1 444.33 43.86L378.54 160.61A160.0 160.0 0 0 0 221.46 160.61Z"/><text x="300.0" y="63.5" class="lbl">Werte &amp; Ziele</text><text x="300.0" y="80.5" class="q">Woran orientieren wir uns?</text></g>
+<g class="seg" data-key="quellen" tabindex="0" role="button" aria-label="Quellen & Wissen: Woher wissen wir?" style="--fill:var(--seg2)"><path d="M449.66 46.94A294.0 294.0 0 0 1 593.98 296.92L459.99 298.32A160.0 160.0 0 0 0 381.45 162.28Z"/><text x="483.5" y="177.5" class="lbl">Quellen &amp; Wissen</text><text x="483.5" y="194.5" class="q">Woher wissen wir?</text></g>
+<g class="seg" data-key="bias" tabindex="0" role="button" aria-label="Bias & Repräsentation: Wer kommt wie vor?" style="--fill:var(--seg3)"><path d="M593.98 303.08A294.0 294.0 0 0 1 449.66 553.06L381.45 437.72A160.0 160.0 0 0 0 459.99 301.68Z"/><text x="483.5" y="396.0" class="lbl">Bias &amp;</text><text x="483.5" y="415.0" class="lbl">Repräsentation</text><text x="483.5" y="432.0" class="q">Wer kommt wie vor?</text></g>
+<g class="seg" data-key="autonomie" tabindex="0" role="button" aria-label="Autonomie: Wer entscheidet?" style="--fill:var(--seg4)"><path d="M444.33 556.14A294.0 294.0 0 0 1 155.67 556.14L221.46 439.39A160.0 160.0 0 0 0 378.54 439.39Z"/><text x="300.0" y="519.5" class="lbl">Autonomie</text><text x="300.0" y="536.5" class="q">Wer entscheidet?</text></g>
+<g class="seg" data-key="transparenz" tabindex="0" role="button" aria-label="Transparenz: Was muss sichtbar sein?" style="--fill:var(--seg1)"><path d="M150.34 553.06A294.0 294.0 0 0 1 6.02 303.08L140.01 301.68A160.0 160.0 0 0 0 218.55 437.72Z"/><text x="116.5" y="405.5" class="lbl">Transparenz</text><text x="116.5" y="422.5" class="q">Was muss sichtbar sein?</text></g>
+<g class="seg" data-key="verantwortung" tabindex="0" role="button" aria-label="Verantwortung: Wer trägt sie?" style="--fill:var(--seg2)"><path d="M6.02 296.92A294.0 294.0 0 0 1 150.34 46.94L218.55 162.28A160.0 160.0 0 0 0 140.01 298.32Z"/><text x="116.5" y="177.5" class="lbl">Verantwortung</text><text x="116.5" y="194.5" class="q">Wer trägt sie?</text></g>
+<defs><path id="arcA" d="M174.02 297.80A126.0 126.0 0 0 1 425.98 297.80"/><path id="arcAq" d="M196.02 298.18A104.0 104.0 0 0 1 403.98 298.18"/><path id="arcM" d="M192.02 301.88A108.0 108.0 0 0 0 407.98 301.88"/><path id="arcMq" d="M169.02 302.29A131.0 131.0 0 0 0 430.98 302.29"/></defs>
+<g class="seg persp p-al" data-key="alignment" tabindex="0" role="button" aria-label="Perspektive Alignment" style="--fill:#e4ebf4"><path d="M148.01 298.67A152.0 152.0 0 0 1 451.99 298.67L384.00 299.27A84.0 84.0 0 0 0 216.00 299.27Z"/><text class="ptxt"><textPath href="#arcA" startOffset="50%">ALIGNMENT</textPath></text><text class="pq"><textPath href="#arcAq" startOffset="50%">Perspektive</textPath></text></g>
+<g class="seg persp p-me" data-key="medien" tabindex="0" role="button" aria-label="Perspektive kritische Medienkompetenz" style="--fill:#d6ecea"><path d="M451.99 301.33A152.0 152.0 0 0 1 148.01 301.33L216.00 300.73A84.0 84.0 0 0 0 384.00 300.73Z"/><text class="ptxt"><textPath href="#arcM" startOffset="50%">KRITISCHE MEDIENKOMPETENZ</textPath></text><text class="pq"><textPath href="#arcMq" startOffset="50%">Perspektive</textPath></text></g>
+<circle cx="300" cy="300" r="76" class="centre"/>
+<text x="300" y="275" class="ctitle">KI in der</text><text x="300" y="294" class="ctitle">Erwachsenen-</text><text x="300" y="313" class="ctitle">bildung</text><text x="300" y="333" class="csub">verstehen · beurteilen</text><text x="300" y="346" class="csub">gestalten</text>
+</svg>
+      <p class="rad-note">Wählen Sie ein Handlungsfeld oder eine der beiden Perspektiven im Innenring.</p>
+    </div>
+    <article class="panel" id="panel" aria-live="polite"></article>
+  </section>
+
+  <section class="cards" id="felder">
+    <div class="eyebrow">Handlungsfelder</div>
+    <div class="section-head"><h2>Woran sich KI-Praxis prüfen lässt</h2>
+    <p>Jedes Handlungsfeld wird aus beiden Perspektiven betrachtet und an einer typischen Situation aus der Erwachsenenbildung konkretisiert.</p></div>
+    <div class="grid" id="cardgrid"></div>
+  </section>
+
+  <section class="sources" id="quellen">
+    <div class="eyebrow">Literatur und Quellen</div>
+    <div class="section-head"><h2>Literatur und Referenzen</h2>
+    <p>Die fachlichen Aussagen stützen sich auf medienpädagogische Grundlagen, Ansätze kritischer Medienkompetenz sowie europäische und internationale Rahmenwerke für den Einsatz von KI. Die Zuordnung der sechs Handlungsfelder ist eine didaktische Synthese für die Erwachsenenbildung.</p></div>
+    <a class="ref-banner" href="quellen.html"><span><b>Alle Referenzen im APA-Format</b>Gegliedert nach Themenbereichen und filterbar nach Handlungsfeld</span><em>Zu den Referenzen →</em></a>
+    <div class="model-note"><b>Zum Modell.</b> Das Orientierungsrad ist kein offizielles Modell der genannten Institutionen. Es verbindet Alignment, kritische Medienkompetenz und ausgewählte Anforderungen der KI-Verordnung mit medienpädagogischen und erwachsenenpädagogischen Perspektiven. Die Praxisbeispiele sind konstruierte Fallbeispiele. Rechtliche Hinweise dienen der Orientierung und ersetzen keine Rechtsberatung im Einzelfall.</div>
+  </section>
+
+</div>
+<footer class="site-footer">
+  <p>&copy; Elisabeth Vanderheiden · <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+</footer>
+<script>
+const F={"werte": {"title": "Werte & Ziele", "short": "Werte & Ziele", "q": "Woran orientieren wir uns?", "lead": "Woran richten wir den Einsatz von KI aus?", "a": "Alignment fragt, ob der KI-Einsatz mit Bildungszielen, Menschenbild, Grundrechten und institutionellem Auftrag vereinbar ist.", "m": "Kritische Medienkompetenz macht Wertannahmen, Interessen und Folgen des Medieneinsatzes zum Gegenstand analytischer, reflexiver und ethischer Beurteilung.", "imp": "Eine KI kann Lernende automatisch unterschiedlichen Lernangeboten zuordnen. Welche Ziele rechtfertigen ihren Einsatz, und welche Ziele dürfen dabei nicht aus dem Blick geraten?", "refs": "EU AI Act: grundrechtsorientierte und menschenzentrierte Ausrichtung der Verordnung, Art. 5 Abs. 1 lit. f; OECD AI Principles: human-centred values and fairness; UNESCO: human-centred approach.", "bereich": "Leitung", "case_title": "Stimmungsanalyse im Online-Kurs", "situation": "Ein Softwareanbieter bietet einer Familienbildungsstätte ein Zusatzmodul für ihre Videokonferenzen an. Es wertet Mimik und Stimme der Teilnehmenden aus und meldet der Kursleitung, wann Aufmerksamkeit und Stimmung sinken.", "umgang": "Die Leitung prüft das Angebot am eigenen Leitbild, das Teilnehmende als selbstbestimmte Erwachsene versteht, und an der Rechtslage. Die KI-Verordnung untersagt seit dem 2. Februar 2025 KI-Systeme, die in Bildungseinrichtungen Emotionen natürlicher Personen ableiten, sofern sie nicht medizinischen oder Sicherheitszwecken dienen (Art. 5 Abs. 1 lit. f). Die Einrichtung lehnt das Modul ab. Kursleitende erhalten stattdessen Anregungen für kurze, freiwillige Rückmelderunden im Kurs.", "pruef": "Welches pädagogische Ziel soll erreicht werden, und welcher Weg dorthin kommt ohne Auswertung persönlicher Merkmale aus?"}, "quellen": {"title": "Quellen & Wissen", "short": "Quellen & Wissen", "q": "Woher wissen wir?", "lead": "Woher „weiß“ die KI das?", "a": "Für den Bildungszweck muss geprüft werden, ob ein KI-System und seine Wissensgrundlagen für die konkrete Aufgabe geeignet sind.", "m": "Baackes Medienkunde und Medienkritik führen zur Frage nach Funktionsweise, Produktionsbedingungen, Quellen, Plausibilität und der Darstellung von Gewissheit.", "imp": "Eine KI gibt eine überzeugende fachliche Antwort und nennt drei Quellen. Vier Prüfungen bleiben offen. Existieren die Quellen? Stützen sie die Aussage? Sind sie aktuell? Ist ihre Auswahl angemessen?", "refs": "Baacke: Medienkunde und analytische Medienkritik; OECD: Transparenz und Erklärbarkeit, einschließlich Informationen über Daten und Input, soweit sinnvoll und machbar.", "bereich": "Kursleitung", "case_title": "Erfundene Fundstellen im Kursmaterial", "situation": "Eine Kursleiterin bereitet einen Abendkurs zur Patientenverfügung vor. Ein Sprachmodell erstellt ihr einen flüssig formulierten Überblick zur Rechtslage mit drei Fundstellen.", "umgang": "Beim Abgleich zeigt sich, dass eine Fundstelle nicht existiert und eine zweite eine überholte Fassung wiedergibt. Die Kursleiterin ersetzt den Überblick durch Informationsmaterial aus amtlichen und fachlich geprüften Quellen. Im Kurs nutzt sie den Vorgang als Beispiel dafür, wie sich KI-Antworten prüfen lassen.", "pruef": "Welche Aussagen im Material lassen sich an einer überprüfbaren Originalquelle festmachen?"}, "bias": {"title": "Bias & Repräsentation", "short": "Bias &|Repräsentation", "q": "Wer kommt wie vor?", "lead": "Wer kommt vor, und in welcher Weise?", "a": "Alignment verlangt die Prüfung, ob KI-Ergebnisse mit Gleichheit, Nichtdiskriminierung, Vielfalt und dem jeweiligen Bildungsverständnis vereinbar sind.", "m": "Kritische Medienkompetenz fragt nach Normalitätsvorstellungen, Stereotypen, dominanten Perspektiven, Auslassungen und gesellschaftlichen Machtverhältnissen.", "imp": "Die KI erzeugt „typische Teilnehmende eines Kurses zur finanziellen Bildung“. Wer erscheint? Wer fehlt? Welche Vorstellungen von Alter, Geschlecht, Herkunft, Einkommen oder Bildung werden sichtbar?", "refs": "OECD: non-discrimination, equality, diversity and fairness; UNESCO: inclusion, equity, linguistic and cultural diversity; kritische Medienkompetenz: Repräsentation und gesellschaftliche Bedingungen.", "bereich": "Öffentlichkeitsarbeit", "case_title": "Titelbilder für das Programmheft", "situation": "Für das Programmheft der Familienbildung erzeugt die Öffentlichkeitsarbeit Titelbilder mit einem Bildgenerator. Der Auftrag lautet „Eltern mit Kindern beim gemeinsamen Lernen“. Fast alle Ergebnisse zeigen junge, schlanke, hellhäutige Paare aus Mann und Frau in großzügigen Wohnungen.", "umgang": "Das Team legt die Bilder neben die tatsächliche Zielgruppe der Angebote, zu der Alleinerziehende, Großeltern, Familien mit Einwanderungsgeschichte und Familien mit geringem Einkommen gehören. Die Bildaufträge werden präzisiert, die Auswahl erfolgt im Vieraugenprinzip. Für einzelne Motive greift die Einrichtung auf Fotos aus eigenen Veranstaltungen zurück, deren Verwendung die Abgebildeten zugestimmt haben.", "pruef": "Würden sich die Menschen, für die das Angebot gedacht ist, in diesen Bildern wiederfinden?"}, "autonomie": {"title": "Autonomie", "short": "Autonomie", "q": "Wer entscheidet?", "lead": "Wer entscheidet?", "a": "KI soll menschliche Handlungsmöglichkeiten unterstützen. Menschen müssen Ergebnisse zurückweisen, verändern und eigene Entscheidungen treffen können.", "m": "Kritische Medienkompetenz schließt die Reflexion ein, wie Empfehlungen, Rankings, Personalisierung und scheinbar objektive KI-Urteile Wahrnehmung und Entscheidungen strukturieren.", "imp": "Nach drei Aufgaben empfiehlt eine KI einer Teilnehmerin nur noch einfachere Materialien. Wer sollte über den weiteren Lernweg entscheiden, und auf welcher Grundlage?", "refs": "EU AI Act Art. 14: menschliche Aufsicht bei Hochrisiko-KI, Anhang III Nr. 3: allgemeine und berufliche Bildung; OECD: human agency and oversight; UNESCO: Schutz menschlicher Handlungsfähigkeit.", "bereich": "Kursleitung", "case_title": "Empfehlung einer Lernplattform", "situation": "In einem Deutschkurs auf Niveau B1 arbeiten die Teilnehmenden ergänzend mit einer adaptiven Lernplattform. Nach einigen Übungen empfiehlt sie einem Teilnehmer, auf A2-Material zurückzugehen. Er ist verunsichert und fragt, ob er den Kurs wechseln muss.", "umgang": "Die Kursleiterin bespricht die Empfehlung mit ihm und zeigt, auf welchen Übungen sie beruht. Gemeinsam vereinbaren sie, einzelne Grammatikthemen gezielt zu wiederholen, und er bleibt im Kurs. Die Einrichtung legt fest, dass Empfehlungen der Plattform keine Einstufung ersetzen. KI-Systeme, die über Zugang oder Zuordnung zu Bildungsangeboten entscheiden, Lernergebnisse bewerten oder das angemessene Bildungsniveau bestimmen, können nach Anhang III Nr. 3 der KI-Verordnung als Hochrisiko-Systeme gelten.", "pruef": "Kann die betroffene Person die Empfehlung nachvollziehen, zurückweisen und selbst über ihren Lernweg entscheiden?"}, "transparenz": {"title": "Transparenz", "short": "Transparenz", "q": "Was muss sichtbar sein?", "lead": "Was muss sichtbar und nachvollziehbar sein?", "a": "Transparenz ermöglicht es, den KI-Einsatz mit Bildungszielen und Rechten der Lernenden in Beziehung zu setzen und Grenzen des Systems zu erkennen.", "m": "Medienkunde und Medienkritik verlangen Wissen über Entstehungsbedingungen, Funktionsweise, Möglichkeiten und Grenzen von KI-generierten Inhalten.", "imp": "KI formuliert eine Ausschreibung, erstellt ein Arbeitsblatt, gibt Feedback oder beantwortet Lernfragen. In welchen Fällen sollte ihre Beteiligung gegenüber Lernenden sichtbar sein?", "refs": "EU AI Act Art. 50 enthält konkrete Transparenzpflichten für bestimmte KI-Systeme und synthetische Inhalte, woraus keine pauschale Kennzeichnungspflicht für jeden KI-Einsatz folgt; OECD: transparency and explainability.", "bereich": "Beratung & Anmeldung", "case_title": "Chatbot auf der Website", "situation": "Eine Einrichtung plant einen Chatbot, der auf der Website Fragen zu Kursen, Gebühren und Anmeldung beantwortet. In einem internen Test halten einige Kolleginnen und Kollegen die Antworten für Nachrichten einer Mitarbeiterin.", "umgang": "Die Einrichtung wählt ein System, das sich zu Beginn jedes Gesprächs deutlich als KI zu erkennen gibt, und ergänzt einen gut sichtbaren Weg zur persönlichen Beratung. Seit dem 2. August 2026 verpflichtet Art. 50 Abs. 1 der KI-Verordnung Anbieter, solche Systeme so zu gestalten, dass Menschen über die Interaktion mit einer KI informiert werden, sofern dies nicht offensichtlich ist. Zusätzlich hält die Einrichtung fest, welche Anliegen der Chatbot an Menschen weitergibt, etwa Fragen zu Ermäßigungen im Einzelfall.", "pruef": "Wissen alle Beteiligten zu jedem Zeitpunkt, ob sie mit einem Menschen oder mit einem KI-System kommunizieren?"}, "verantwortung": {"title": "Verantwortung", "short": "Verantwortung", "q": "Wer trägt sie?", "lead": "Wer trägt Verantwortung für Einsatz und Folgen?", "a": "Alignment endet nicht bei der technischen Funktion. Auswahl, Einsatz, Prüfung und Folgen müssen professionell und institutionell verantwortet werden.", "m": "Baackes reflexive und ethische Medienkritik verbindet eigenes Medienhandeln mit sozialen, wirtschaftlichen und weiteren Folgen und verlangt begründete Werturteile.", "imp": "Ein KI-generiertes Arbeitsblatt enthält eine sachlich falsche Information, die eine Teilnehmerin übernimmt. Welche Verantwortung tragen Anbieter, Einrichtung, Lehrende und Lernende jeweils?", "refs": "OECD: Accountability; EU AI Act Art. 4: KI-Kompetenz, rollenbezogene Pflichten von Anbietern und Betreibern; DSGVO: Verarbeitung personenbezogener Daten.", "bereich": "Leitung & Kursleitung", "case_title": "Teilnehmendendaten im KI-Werkzeug", "situation": "Ein freiberuflicher Dozent lässt sich für einen Kurs zur Tabellenkalkulation personalisierte Übungsaufgaben von einem frei verfügbaren KI-Dienst erstellen. Dafür lädt er die Teilnehmendenliste mit Namen und E-Mail-Adressen hoch. Eine der Aufgaben enthält zudem eine fehlerhafte Formel.", "umgang": "Die Einrichtung klärt mit ihm, dass personenbezogene Daten der Teilnehmenden nur im Rahmen der Datenschutz-Grundverordnung und nur in freigegebenen Diensten verarbeitet werden dürfen, und nimmt Regeln zum KI-Einsatz in ihre Honorarvereinbarungen auf. Für die fachliche Richtigkeit der Materialien bleibt die Lehrperson verantwortlich. Soweit die Einrichtung KI-Systeme selbst einsetzt, verpflichtet sie Art. 4 der KI-Verordnung, die KI-Kompetenz ihres Personals und weiterer in ihrem Auftrag tätiger Personen zu fördern. Sie öffnet ihre Fortbildung deshalb auch für Honorarkräfte.", "pruef": "Ist für jeden Schritt vom Werkzeug bis zum Material geklärt, wer prüft, wer entscheidet und wer für Fehler einsteht?"}},P={"alignment": {"title": "Alignment", "lead": "Woran richten wir KI und ihren Einsatz aus?", "a": "Im technischen Diskurs bezeichnet Alignment die Ausrichtung von KI-Systemen an menschlichen Zielen und Werten. Für die Erwachsenenbildung wird daraus zusätzlich eine pädagogische Prüfbewegung. Passt der Einsatz zu Bildungsziel, Menschenbild, Kontext und Rechten der Lernenden?", "m": "Alignment ersetzt kritische Medienkompetenz nicht. Weil Werte und Ziele umstritten, kontextabhängig und teilweise implizit sind, braucht ihre Konkretisierung Analyse, Reflexion und Urteil.", "imp": "Neben die Frage „Kann KI das?“ treten die Fragen „Wozu setzen wir sie ein, für wen, unter welchen Bedingungen und mit welchen Folgen?“", "refs": "OECD AI Principles: human-centred values and fairness; UNESCO: human-centred approach; EU AI Act: Schutz von Grundrechten und vertrauenswürdige KI."}, "medien": {"title": "Kritische Medienkompetenz", "lead": "Verstehen, beurteilen, nutzen und gestalten.", "a": "Kritische Medienkompetenz reicht über Fehler- oder Quellenkontrolle hinaus. Sie verbindet Wissen über Medien und ihre Systeme mit Analyse, Reflexion, ethischem Urteil, selbstbestimmter Nutzung und Gestaltung.", "m": "Baacke unterscheidet vier Dimensionen, nämlich Medienkritik, Medienkunde, Mediennutzung und Mediengestaltung. Medienkritik umfasst analytische, reflexive und ethische Zugänge.", "imp": "Für KI bedeutet dies, Funktionsweisen zu verstehen, Ergebnisse und Bedingungen kritisch zu prüfen, den eigenen Umgang zu reflektieren und KI für eigene Bildungs- und Gestaltungsziele souverän einzusetzen.", "refs": "Baacke (1996a, 1996b, 1997), dargestellt bei Ganguin und Sander (2023); erwachsenenbildung.at: Konzepte kritischer Medienkompetenz."}},ORDER=["werte", "quellen", "bias", "autonomie", "transparenz", "verantwortung"];
+const panel=document.getElementById('panel'),segs=[...document.querySelectorAll('.rad .seg')];
+function fieldHTML(k,f){return `<span class="tag">Handlungsfeld</span><span class="tag">${f.bereich}</span>
+<h2>${f.title}</h2><p class="lead">${f.lead}</p>
+<div class="mini al"><b>Alignment</b>${f.a}</div><div class="mini me"><b>Kritische Medienkompetenz</b>${f.m}</div>
+<div class="impulse"><b>Denkimpuls</b>${f.imp}</div>
+<div class="praxis"><div class="praxis-head"><b>Praxisbeispiel · ${f.case_title}</b><span>${f.bereich}</span></div>
+<div class="praxis-body"><h4>Situation</h4><p>${f.situation}</p><h4>Möglicher Umgang</h4><p>${f.umgang}</p><p class="pq">Prüffrage für Ihr Team · ${f.pruef}</p></div></div>
+<p class="refs"><b>Quellenbezug.</b> ${f.refs} Vollständige Angaben finden Sie unter <a href="quellen.html?feld=${k}">Literatur und Referenzen</a>.</p>`}
+function perspHTML(k,p){const lab=k==='alignment'?['Begriff','Bezug zur kritischen Medienkompetenz']:['Begriff','Dimensionen nach Baacke'];
+return `<span class="tag">Perspektive</span><h2>${p.title}</h2><p class="lead">${p.lead}</p>
+<div class="mini al"><b>${lab[0]}</b>${p.a}</div><div class="mini me"><b>${lab[1]}</b>${p.m}</div>
+<div class="impulse"><b>Denkimpuls</b>${p.imp}</div>
+<p class="persp-note">Diese Perspektive durchzieht alle sechs Handlungsfelder. Wählen Sie ein Feld im Außenring, um sie an einem Praxisbeispiel zu sehen.</p>
+<p class="refs"><b>Quellenbezug.</b> ${p.refs} Vollständige Angaben finden Sie unter <a href="quellen.html?feld=${k}">Literatur und Referenzen</a>.</p>`}
+function show(k,push){segs.forEach(s=>s.classList.toggle('selected',s.dataset.key===k));
+panel.innerHTML=F[k]?fieldHTML(k,F[k]):perspHTML(k,P[k]);
+if(push)history.replaceState(null,'','#'+k)}
+segs.forEach(s=>{s.addEventListener('click',()=>show(s.dataset.key,true));
+s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(s.dataset.key,true)}})});
+document.getElementById('cardgrid').innerHTML=ORDER.map(k=>{const f=F[k];return `<article class="card"><div><span class="tag">${f.bereich}</span></div>
+<h3>${f.title}</h3><p><b>${f.lead}</b></p><p class="case"><b>Praxisbeispiel</b> · ${f.case_title}</p>
+<button type="button" data-open="${k}">Im Orientierungsrad öffnen →</button></article>`}).join('');
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{show(b.dataset.open,true);
+document.getElementById('rad').scrollIntoView({behavior:'smooth'})}));
+const h=location.hash.slice(1);show(F[h]||P[h]?h:'werte',false);
+</script>
+</body>
+</html>

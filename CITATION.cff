@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Wenn Sie diese Anwendung verwenden, zitieren Sie sie bitte wie folgt."
+type: software
+title: "KI-Kompass EB: Orientierung, Praxisbeispiele und Werkzeuge für den reflektierten Einsatz von KI in der Erwachsenenbildung"
+version: "0.1.0"
+date-released: "2026-09-28"
+authors:
+  - family-names: "Vanderheiden"
+    given-names: "Elisabeth"
+license: CC-BY-NC-4.0
+keywords:
+  - Erwachsenenbildung
+  - Künstliche Intelligenz
+  - Medienkompetenz
+  - AI Act
+  - KI-Kompetenz
