@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fallbeispiele zum Einsatz von KI in Einrichtungen der Erwachsenenbildung mit Prüffragen.">
+<meta name="description" content="Anwendungen aus der Praxis und Fallbeispiele zum Einsatz von KI in Einrichtungen der Erwachsenenbildung.">
 <title>Praxisbeispiele – KI-Kompass EB</title>
 <style>
 :root{--navy:#1a365d;--navy-light:#2a4a7f;--teal:#2b7a78;--teal-dark:#246b69;--teal-light:#3aafa9;
@@ -48,7 +48,24 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .case-body a{margin-top:auto;padding-top:14px;color:var(--teal);font-weight:700;text-decoration:none;font-size:13px}
 .note{margin-top:28px;padding:16px 18px;background:#fff;border:1px dashed #cbd7e2;border-radius:10px;font-size:13px;color:var(--muted)}
 .note b{color:var(--navy)}.note a{color:var(--teal)}
-@media(max-width:800px){.cases{grid-template-columns:1fr}}
+.block-head{margin:8px 0 18px}.block-head h2{font-size:24px;color:var(--navy);margin-bottom:4px}.block-head p{font-size:14px;color:var(--muted);max-width:800px}
+.appgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:56px}
+.app-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:20px;transition:box-shadow .18s,border-color .18s}
+.app-card:target{border-color:var(--teal);box-shadow:0 0 0 3px rgba(58,175,169,.25)}
+.app-head{background:var(--navy);color:#fff;padding:18px 20px}
+.app-head .kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.app-head h3{font-size:20px;line-height:1.25;margin:4px 0 4px}.app-head p{font-size:13.5px;opacity:.9}
+.app-body{padding:16px 20px 20px;font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;flex:1}
+.app-body h4{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin:12px 0 3px}
+.app-body h4:first-child{margin-top:0}
+.app-body .ki{margin-top:12px;padding:12px 14px;background:#f3f6fa;border-left:4px solid var(--navy);border-radius:8px}
+.app-body .ki b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:2px}
+.app-body .von{font-size:12px;color:var(--light);margin-top:12px}
+.app-body .ftags{margin-top:8px}.app-body .ftags a{text-decoration:none}
+.app-open{margin-top:auto;padding-top:16px}
+.app-open a{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:999px;transition:background .15s}
+.app-open a:hover{background:var(--teal-dark)}
+@media(max-width:800px){.cases,.appgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -61,8 +78,47 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <header class="header">
     <div class="eyebrow">02 · Praxis erkunden</div>
     <h1>Praxisbeispiele</h1>
-    <p class="subtitle">Typische Situationen aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit. Jedes Beispiel ist einem Handlungsfeld des Orientierungsrads zugeordnet und endet mit einer Prüffrage für die Arbeit im eigenen Team.</p>
+    <p class="subtitle">Anwendungen aus der Erwachsenenbildung, die mit KI-Unterstützung entstanden sind, und Fallbeispiele für typische Situationen in Einrichtungen. Alle Beispiele sind den Handlungsfeldern des Orientierungsrads zugeordnet.</p>
   </header>
+  <section id="anwendungen">
+    <div class="block-head"><div class="eyebrow">Anwendungen aus der Praxis</div><h2>Mit KI entwickelt, fachlich verantwortet</h2>
+    <p>Die vier Anwendungen zeigen, wie KI bei der Entwicklung digitaler Bildungswerkzeuge mitwirken kann. Zu jeder Anwendung ist beschrieben, welche Aufgaben die KI übernommen hat und wo die fachliche Verantwortung liegt.</p></div>
+    <div class="appgrid"><article class="app-card" id="wirkung">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Wirkungs-Werkstatt</h3><p>Digitale Werkzeuge für wirkungsorientierte Erwachsenenbildung</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Browserbasierte Toolbox für Einrichtungen der Erwachsenenbildung mit vier Zugängen. Werkzeuge unterstützen beim Planen und Auswerten von Wirkung, alternative Verfahren erfassen Veränderungen bei Teilnehmenden, spielerische Anwendungen machen Wirkungsdenken erfahrbar, und ein kritischer Diskurs reflektiert Voraussetzungen und Grenzen von Wirkungsmessung.</p>
+  <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Konzept, fachliche Inhalte und Quellenauswahl verantwortet die Autorin.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>Die Anwendung zeigt eine klare Rollenverteilung. KI beschleunigt die technische Umsetzung, während Wirkungsverständnis, Begriffe und kritische Einordnung fachlich begründet und namentlich verantwortet werden.</p><div class="ftags"><a href="orientierungsrad.html#verantwortung"><span class="tag">Verantwortung</span></a><a href="orientierungsrad.html#werte"><span class="tag">Werte &amp; Ziele</span></a></div>
+  <p class="von">Elisabeth Vanderheiden</p>
+  <p class="app-open"><a href="https://research2026-collab.github.io/Wirksamkeit/" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article>
+<article class="app-card" id="persona">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Persona-Werkstatt</h3><p>Angebote der finanziellen Bildung für Erwachsene planen</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Planungswerkzeug mit 15 Personas, die typische Zielgruppen der finanziellen Grundbildung in sehr unterschiedlichen Lebenslagen abbilden. Planende wählen eine Persona oder legen eine eigene an, entwickeln daraus ein passendes Angebot und speichern die Ergebnisse lokal.</p>
+  <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Konzept und Personas verantwortet die Autorin.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>Personas verdichten Zielgruppen und können dabei Stereotype festschreiben. Die Anwendung eignet sich daher, um den Denkimpuls des Feldes Bias und Repräsentation praktisch zu bearbeiten und zu prüfen, welche Lebenslagen sichtbar werden und welche fehlen.</p><div class="ftags"><a href="orientierungsrad.html#bias"><span class="tag">Bias &amp; Repräsentation</span></a><a href="orientierungsrad.html#werte"><span class="tag">Werte &amp; Ziele</span></a></div>
+  <p class="von">Elisabeth Vanderheiden</p>
+  <p class="app-open"><a href="https://research2026-collab.github.io/FiBi/personas.html" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article>
+<article class="app-card" id="faq">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>FAQ-Whiteboard KI & Urheberrecht</h3><p>Fragen und Antworten zu Urheberrecht, Datenschutz und EU AI Act im Unterrichtskontext</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Interaktive Sammlung von Fragen und Antworten für Lehrkräfte, insbesondere in Sprachkursen. Die Fragen sind nach Datenschutz, Urheberrecht, EU AI Act und Sprachkursen gegliedert und lassen sich filtern. Weitere Fragen können über ein Formular eingereicht werden.</p>
+  <div class="ki"><b>Rolle der KI</b>Die Antworten wurden laut Hinweis in der Anwendung mit KI-Unterstützung erstellt. Die Anwendung weist ausdrücklich darauf hin, dass sie keine Rechtsberatung ersetzt.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>Die KI-Beteiligung an den Inhalten wird offen ausgewiesen. Gerade bei rechtlichen Fragen bleibt es notwendig, KI-gestützte Antworten an den Primärquellen zu prüfen und den Stand der Rechtslage mitzuführen.</p><div class="ftags"><a href="orientierungsrad.html#transparenz"><span class="tag">Transparenz</span></a><a href="orientierungsrad.html#quellen"><span class="tag">Quellen &amp; Wissen</span></a></div>
+  <p class="von">Research2026-collab</p>
+  <p class="app-open"><a href="https://research2026-collab.github.io/faq-ki-recht/faq_whiteboard.html" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article>
+<article class="app-card" id="einfach">
+  <div class="app-head"><div class="kicker">Anwendung aus der Praxis</div><h3>Einfach.Machen Wissensraum</h3><p>Wissensraum für Tools und Materialien in Einfacher und Leichter Sprache</p></div>
+  <div class="app-body"><h4>Was die Anwendung leistet</h4><p>Kuratierte Sammlung von Werkzeugen und Materialien in Einfacher und Leichter Sprache. Einträge sind nach Themenbereich, Zielgruppe, Format, Sprachniveau sowie Zugangs- und Lizenzmodell erschlossen. Neue Materialien können eingereicht werden und durchlaufen eine redaktionelle Prüfung.</p>
+  <div class="ki"><b>Rolle der KI</b>Programmierung und Gestaltung erfolgten mit KI-Unterstützung. Auswahl und Prüfung der Materialien liegen bei der Redaktion des Projekts.</div>
+  <h4>Bezug zum Orientierungsrad</h4><p>Der Wissensraum verbindet digitale Umsetzung mit einem Teilhabeziel. Die redaktionelle Prüfung sichert, dass über Aufnahme und Qualität der Materialien Menschen entscheiden.</p><div class="ftags"><a href="orientierungsrad.html#werte"><span class="tag">Werte &amp; Ziele</span></a><a href="orientierungsrad.html#verantwortung"><span class="tag">Verantwortung</span></a></div>
+  <p class="von">Katholische Erwachsenenbildung Rheinland-Pfalz, gefördert durch das Ministerium für Wissenschaft, Weiterbildung und Gesundheit</p>
+  <p class="app-open"><a href="https://research2026-collab.github.io/Einfach_Machen_Wissensbasis/" target="_blank" rel="noopener">Anwendung öffnen ↗</a></p></div>
+</article></div>
+  </section>
+  <section id="fallbeispiele">
+  <div class="block-head"><div class="eyebrow">Fallbeispiele</div><h2>Situationen aus dem Alltag von Einrichtungen</h2>
+  <p>Konstruierte Fälle aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit, jeweils mit einer Prüffrage für die Arbeit im eigenen Team.</p></div>
   <div class="filters" role="group" aria-label="Nach Handlungsfeld filtern"><button type="button" aria-pressed="true" data-f="alle">Alle</button><button type="button" aria-pressed="false" data-f="werte">Werte &amp; Ziele</button><button type="button" aria-pressed="false" data-f="quellen">Quellen &amp; Wissen</button><button type="button" aria-pressed="false" data-f="bias">Bias &amp; Repräsentation</button><button type="button" aria-pressed="false" data-f="autonomie">Autonomie</button><button type="button" aria-pressed="false" data-f="transparenz">Transparenz</button><button type="button" aria-pressed="false" data-f="verantwortung">Verantwortung</button></div>
   <div class="cases"><article class="case" data-field="werte">
   <div class="case-head"><span class="tag">Werte &amp; Ziele</span><span class="tag">Leitung</span><h2>Stimmungsanalyse im Online-Kurs</h2></div>
@@ -100,7 +156,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   <p class="pq"><span>Prüffrage für Ihr Team</span>Ist für jeden Schritt vom Werkzeug bis zum Material geklärt, wer prüft, wer entscheidet und wer für Fehler einsteht?</p>
   <a href="orientierungsrad.html#verantwortung">Im Orientierungsrad ansehen →</a></div>
 </article></div>
-  <p class="note"><b>Hinweis.</b> Die Beispiele sind konstruierte Fallbeispiele, die typische Situationen verdichten. Rechtliche Hinweise geben den Stand der KI-Verordnung und der Datenschutz-Grundverordnung zum September 2026 wieder und ersetzen keine Rechtsberatung im Einzelfall. Die Sammlung wird fortlaufend erweitert. Alle Quellen finden Sie unter <a href="quellen.html">Literatur und Referenzen</a>.</p>
+  </section>
+  <p class="note"><b>Hinweis.</b> Die Fallbeispiele sind konstruierte Fallbeispiele, die typische Situationen verdichten. Rechtliche Hinweise geben den Stand der KI-Verordnung und der Datenschutz-Grundverordnung zum September 2026 wieder und ersetzen keine Rechtsberatung im Einzelfall. Die Sammlung wird fortlaufend erweitert. Alle Quellen finden Sie unter <a href="quellen.html">Literatur und Referenzen</a>.</p>
 
 </div>
 <footer class="site-footer">

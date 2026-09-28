@@ -14,7 +14,7 @@ Das **Orientierungsrad** verbindet zwei Perspektiven, Alignment und kritische Me
 
 ### 2. Praxis erkunden
 
-Die Seite **Praxisbeispiele** versammelt Fallbeispiele aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit. Jedes Beispiel beschreibt eine Situation, einen möglichen Umgang und eine Prüffrage für das eigene Team und ist einem Handlungsfeld zugeordnet. Die Beispiele sind konstruierte Fälle. Rechtliche Hinweise beziehen sich auf die Verordnung (EU) 2024/1689 und die Verordnung (EU) 2016/679 mit Stand September 2026.
+Die Seite **Praxisbeispiele** stellt zunächst vier Anwendungen aus der Erwachsenenbildung vor, die mit KI-Unterstützung entstanden sind: die Wirkungs-Werkstatt, die Persona-Werkstatt für finanzielle Bildung, das FAQ-Whiteboard KI & Urheberrecht und den Einfach.Machen Wissensraum. Zu jeder Anwendung werden die Rolle der KI und der Bezug zum Orientierungsrad beschrieben. Darunter folgen konstruierte Fallbeispiele aus Leitung, Kursleitung, Beratung und Öffentlichkeitsarbeit, jeweils mit einer Prüffrage für das eigene Team. Rechtliche Hinweise beziehen sich auf die Verordnung (EU) 2024/1689 und die Verordnung (EU) 2016/679 mit Stand September 2026.
 
 ### 3. PLAY
 
@@ -43,6 +43,12 @@ In Vorbereitung. Eine Einordnung von Art. 4 der KI-Verordnung für Einrichtungen
 | `play.html` | Platzhalter PLAY |
 | `kritischer-diskurs.html` | Platzhalter kritischer Diskurs |
 | `ki-kompetenz.html` | Platzhalter KI-Kompetenz |
+
+## Adresse
+
+GitHub Pages: `https://research2026-collab.github.io/KI-Kompass-EB/`
+
+Repository: `Research2026-collab/KI-Kompass-EB`
 
 ## Technischer Ansatz
 
