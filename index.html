@@ -187,7 +187,7 @@ function fieldHTML(k,f){return `<span class="tag">Handlungsfeld</span>
 ${appsFor(k,f)}<p class="refs"><b>Quellenbezug.</b> ${f.refs} Vollständige Angaben finden Sie unter <a href="quellen.html?feld=${k}">Literatur und Referenzen</a>.</p>`}
 function perspHTML(k,p){const lab=k==='alignment'?['Begriff','Bezug zur kritischen Medienkompetenz']:['Begriff','Dimensionen nach Baacke'];
 return `<span class="tag">Perspektive</span><h2>${p.title}</h2><p class="lead">${p.lead}</p>
-<div class="mini al"><b>${lab[0]}</b>${p.a}</div><div class="mini me"><b>${lab[1]}</b>${p.m}</div>
+<div class="mini ${k==='alignment'?'al':'me'}"><b>${lab[0]}</b>${p.a}</div>${k==='medien'?`<div class="mini me"><b>${lab[1]}</b>${p.m}</div>`:''}
 <div class="impulse"><b>Denkimpuls</b>${p.imp}</div>
 <p class="persp-note">Diese Perspektive durchzieht alle sechs Handlungsfelder. Wählen Sie ein Feld im Außenring, um sie dort konkretisiert zu sehen.</p>
 <p class="refs"><b>Quellenbezug.</b> ${p.refs} Vollständige Angaben finden Sie unter <a href="quellen.html?feld=${k}">Literatur und Referenzen</a>.</p>`}
